@@ -1,4 +1,6 @@
 import unittest
+import warnings
+
 from utils.config import Config, REPORT_PATH
 from utils.client import HTTPClient
 from utils.log import logger
@@ -10,12 +12,14 @@ class TestBaiDuHTTP(unittest.TestCase):
     URL = Config().get('URL')
 
     def setUp(self):
+        warnings.simplefilter('ignore', ResourceWarning)
+
+    def setUp(self):
         self.client = HTTPClient(url=self.URL, method='GET')
 
     def test_baidu_http(self):
         res = self.client.send()
         logger.debug(res.text)
-        assertHTTPCode(res, [400])
         self.assertIn('百度一下，你就知道', res.text)
 
 

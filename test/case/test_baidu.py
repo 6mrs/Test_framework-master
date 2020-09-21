@@ -3,7 +3,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-URL = "http://www.baidu.com"
+URL = "http://10.0.1.183/youjia-admin/login"
 base_path = os.path.dirname(os.path.abspath(__file__)) + '/../..'
 driver_path = os.path.abspath(base_path+'/drivers/chromedriver')
 
