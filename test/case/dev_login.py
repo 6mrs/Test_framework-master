@@ -25,6 +25,7 @@ class TestBaiDu(unittest.TestCase):
         links = self.driver.find_elements_by_xpath('//*[@id="btnSubmit"]"]')
         for link in links:
             logger.info(link.text)
+
     def tearDown(self):
         time.sleep(5)
         self.driver.quit()

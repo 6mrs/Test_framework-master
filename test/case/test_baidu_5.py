@@ -10,7 +10,7 @@ from utils.mail import Email
 
 
 class TestBaiDu(unittest.TestCase):
-    URL = Config().get('URL')
+    URL = 'https://www.baidu.com'
     excel = DATA_PATH + '/baidu.xlsx'
 
     locator_kw = (By.ID, 'kw')
@@ -39,10 +39,12 @@ class TestBaiDu(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    report = REPORT_PATH + '\\report.html'
-    with open(report, 'wb') as f:
-        runner = HTMLTestRunner(f, verbosity=2, title='测试框架', description='修改html报告')
-        runner.run(TestBaiDu('test_search'))
+    report = REPORT_PATH + '/report.html'
+    HTMLTestRunner.HTMLTestRunner(
+        stream=open(report, 'wb'),
+        title="自动化测试报告",
+        description="自动化测试执行的详细信息"
+    ).run()
     e = Email(title='百度搜素测试报告',
               message='这是今天的测试报告，请查收！',
               receiver='396214358@qq.com',
