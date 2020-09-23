@@ -194,9 +194,9 @@ function showOutput(id, name) {
 
 <div class='page-header'>
 <h1>自动化测试报告</h1>
-<p class='attribute'><strong>开始时间:</strong> 2020-09-22 11:45:00</p>
-<p class='attribute'><strong>运行时长:</strong> 0:00:32.493886</p>
-<p class='attribute'><strong>状态:</strong> 通过 1 错误 1</p>
+<p class='attribute'><strong>开始时间:</strong> 2020-09-23 16:32:11</p>
+<p class='attribute'><strong>运行时长:</strong> 0:00:16.435866</p>
+<p class='attribute'><strong>状态:</strong> 错误 5</p>
 
 </div>
 <p class='description'>自动化测试执行的详细信息</p>
@@ -252,17 +252,18 @@ function showOutput(id, name) {
         <pre>
         
 ft1.1: Traceback (most recent call last):
-  File "/Users/youjia/Desktop/Test_framework-master/test/case/dev_login.py", line 19, in test_search_0
-    self.driver.find_element_by_css_selector('#signupForm &gt; input.form-control.uname').send_keys('admin')  # 用户名正确
-  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 598, in find_element_by_css_selector
-    return self.find_element(by=By.CSS_SELECTOR, value=css_selector)
-  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 976, in find_element
-    return self.execute(Command.FIND_ELEMENT, {
+  File "/Users/youjia/Desktop/Test_framework-master/test/case/dev_login.py", line 25, in test_search_0
+    links = self.driver.find_elements_by_xpath('//*[@id="btnSubmit"]"]')
+  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 410, in find_elements_by_xpath
+    return self.find_elements(by=By.XPATH, value=xpath)
+  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 1005, in find_elements
+    return self.execute(Command.FIND_ELEMENTS, {
   File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
     self.error_handler.check_response(response)
   File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#signupForm &gt; input.form-control.uname"}
+selenium.common.exceptions.InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression //*[@id="btnSubmit"]"] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="btnSubmit"]"]' is not a valid XPath expression.
   (Session info: chrome=85.0.4183.121)
   (Driver info: chromedriver=2.35.528157 (4429ca2590d6988c0745c24c8858745aaaec01ef),platform=Mac OS X 10.15.6 x86_64)
 
@@ -275,26 +276,143 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
     </td>
 </tr>
 
-<tr class='passClass'>
+<tr class='errorClass'>
     <td>dev_search.TestLogin</td>
-    <td>1</td>
-    <td>1</td>
+    <td>4</td>
     <td>0</td>
     <td>0</td>
-    <td><a href="javascript:showClassDetail('c2',1)">详情</a></td>
+    <td>4</td>
+    <td><a href="javascript:showClassDetail('c2',4)">详情</a></td>
 </tr>
 
-<tr id='pt2.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_login</div></td>
-    <td colspan='5' align='center'>通过</td>
+<tr id='ft2.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_search</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        错误</a>
+
+    <div id='div_ft2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.1: 
+SubTestCase Error:
+test_search (dev_search.TestLogin) (data={'username': 'python', 'password': 123.0})Traceback (most recent call last):
+  File "/Users/youjia/Desktop/Test_framework-master/test/case/dev_search.py", line 25, in test_search
+    self.sub_setUp()
+AttributeError: 'TestLogin' object has no attribute 'sub_setUp'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_search</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.2')" >
+        错误</a>
+
+    <div id='div_ft2.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.2: 
+SubTestCase Error:
+test_search (dev_search.TestLogin) (data={'username': 'selenium', 'password': 124.0})Traceback (most recent call last):
+  File "/Users/youjia/Desktop/Test_framework-master/test/case/dev_search.py", line 25, in test_search
+    self.sub_setUp()
+AttributeError: 'TestLogin' object has no attribute 'sub_setUp'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.3' class='none'>
+    <td class='errorCase'><div class='testcase'>test_search</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.3')" >
+        错误</a>
+
+    <div id='div_ft2.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.3: 
+SubTestCase Error:
+test_search (dev_search.TestLogin) (data={'username': 'postman', 'password': 125.0})Traceback (most recent call last):
+  File "/Users/youjia/Desktop/Test_framework-master/test/case/dev_search.py", line 25, in test_search
+    self.sub_setUp()
+AttributeError: 'TestLogin' object has no attribute 'sub_setUp'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.4' class='none'>
+    <td class='errorCase'><div class='testcase'>test_search</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.4')" >
+        错误</a>
+
+    <div id='div_ft2.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.4: Traceback (most recent call last):
+  File "/Users/youjia/Desktop/Test_framework-master/test/case/dev_search.py", line 31, in test_search
+    self.driver.find_elements_by_xpath("//input[@name='handle']")[-1].send_keys(d['password'])
+  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webelement.py", line 478, in send_keys
+    {'text': "".join(keys_to_typing(value)),
+  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/common/utils.py", line 150, in keys_to_typing
+    for i in range(len(val)):
+TypeError: object of type 'float' has no len()
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
 </tr>
 
 <tr id='total_row'>
     <td>总计</td>
-    <td>2</td>
-    <td>1</td>
+    <td>5</td>
     <td>0</td>
-    <td>1</td>
+    <td>0</td>
+    <td>5</td>
     <td>&nbsp;</td>
 </tr>
 </table>
