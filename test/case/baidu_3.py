@@ -8,7 +8,7 @@ from utils.file_reader import ExcelReader
 
 
 class TestBaiDu(unittest.TestCase):
-    URL = Config().get('URL')
+    URL = 'https://www.baidu.com'
     excel = DATA_PATH + '/baidu.xlsx'
 
     locator_kw = (By.ID, 'kw')

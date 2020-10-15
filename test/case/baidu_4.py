@@ -9,7 +9,7 @@ from utils.HTMLTestRunner import HTMLTestRunner
 
 
 class TestBaiDu(unittest.TestCase):
-    URL = Config().get('URL')
+    URL = 'https://www.baidu.com'
     excel = DATA_PATH + '/baidu.xlsx'
 
     def sub_setUp(self):

@@ -8,7 +8,7 @@ from utils.config import REPORT_PATH
 def allTest():
     suite = unittest.TestLoader().discover(
         start_dir=os.path.dirname(__file__),  # 文件地址
-        pattern="dev_*.py",  # 文件类型
+        pattern="test_*.py",  # 文件类型
         top_level_dir=None)
     return suite
 

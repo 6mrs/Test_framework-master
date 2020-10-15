@@ -20,7 +20,7 @@ class UntitledTestCase4(unittest.TestCase):
         driver = self.driver
         driver.get("http://10.0.1.183/youjia-admin/index")
         # ERROR: Caught exception [ERROR: Unsupported command [selectFrame | index=3 | ]]
-        driver.find_element_by_link_text(u"添加").click()
+        driver.find_element_by_link_text("添加").click()
         # ERROR: Caught exception [ERROR: Unsupported command [selectFrame | index=0 | ]]
         driver.find_element_by_name("cardName").click()
         driver.find_element_by_name("cardName").clear()

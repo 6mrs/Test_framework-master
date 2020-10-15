@@ -13,7 +13,7 @@ locator_result = (By.XPATH, '//div[contains(@class, "result")]/h3/a')
 
 driver = webdriver.Chrome(executable_path=driver_path)
 driver.get(URL)
-driver.find_element(*locator_kw).send_keys('selenium 灰蓝')
+driver.find_element(*locator_kw).send_keys('selenium')
 driver.find_element(*locator_su).click()
 time.sleep(2)
 links = driver.find_elements(*locator_result)

@@ -21,7 +21,7 @@ class TestBaiDu(unittest.TestCase):
         self.driver.quit()
 
     def test_search_0(self):
-        self.driver.find_element(*self.locator_kw).send_keys('selenium 灰蓝')
+        self.driver.find_element(*self.locator_kw).send_keys('selenium')
         self.driver.find_element(*self.locator_su).click()
         time.sleep(2)
         links = self.driver.find_elements(*self.locator_result)

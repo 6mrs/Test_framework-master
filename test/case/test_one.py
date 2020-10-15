@@ -6,11 +6,8 @@ from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 import unittest, time, re
-
-from test.case.alltest import allTest
-from utils import HTMLTestRunner
 from utils.config import REPORT_PATH
-
+from utils.HTMLTestRunner import HTMLTestRunner
 
 class UntitledTestCase1(unittest.TestCase):
     def setUp(self):
@@ -32,28 +29,16 @@ class UntitledTestCase1(unittest.TestCase):
         driver.find_element_by_name("validateCode").send_keys("0")
         driver.find_element_by_id("btnSubmit").click()
         time.sleep(5)
-        driver.find_element_by_name("password").click()
-        driver.find_element_by_name("password").clear()
-        driver.find_element_by_name("password").send_keys("")
-        driver.find_element_by_id("btnSubmit").click()
-        driver.find_element_by_name("username").click()
-        time.sleep(5)
+
         driver.find_element_by_name("username").clear()
-        driver.find_element_by_name("username").send_keys("youjia")
+        driver.find_element_by_name("username").send_keys("18675425672766555677")
         driver.find_element_by_name("password").clear()
         driver.find_element_by_name("password").send_keys("123")
         driver.find_element_by_name("validateCode").clear()
         driver.find_element_by_name("validateCode").send_keys("16")
-        driver.find_element_by_id("signupForm").submit()
-        driver.find_element_by_name("username").click()
-        time.sleep(5)
-        driver.find_element_by_name("username").clear()
-        driver.find_element_by_name("username").send_keys("admin")
-        driver.find_element_by_name("password").clear()
-        driver.find_element_by_name("password").send_keys("youjia")
-        driver.find_element_by_name("validateCode").clear()
-        driver.find_element_by_name("validateCode").send_keys("1")
         driver.find_element_by_id("btnSubmit").click()
+        time.sleep(5)
+
 
     def is_element_present(self, how, what):
         try:
@@ -86,10 +71,8 @@ class UntitledTestCase1(unittest.TestCase):
         self.assertEqual([], self.verificationErrors)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     report = REPORT_PATH + '/test.html'
-    HTMLTestRunner.HTMLTestRunner(
-        stream=open(report, 'wb'),
-        title="自动化测试报告",
-        description="自动化测试执行的详细信息"
-    ).run(webdriver())
+    with open(report, 'wb') as f:
+        runner = HTMLTestRunner(f, verbosity=2, title='测试框架', description='修改html报告')
+        runner.run(UntitledTestCase1('test_untitled_test_case1'))

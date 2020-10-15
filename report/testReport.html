@@ -194,9 +194,9 @@ function showOutput(id, name) {
 
 <div class='page-header'>
 <h1>自动化测试报告</h1>
-<p class='attribute'><strong>开始时间:</strong> 2020-10-12 15:37:57</p>
-<p class='attribute'><strong>运行时长:</strong> 0:00:21.837118</p>
-<p class='attribute'><strong>状态:</strong> 错误 5</p>
+<p class='attribute'><strong>开始时间:</strong> 2020-10-15 14:53:07</p>
+<p class='attribute'><strong>运行时长:</strong> 0:04:33.270347</p>
+<p class='attribute'><strong>状态:</strong> 通过 8 错误 11</p>
 
 </div>
 <p class='description'>自动化测试执行的详细信息</p>
@@ -228,16 +228,16 @@ function showOutput(id, name) {
 </tr>
 
 <tr class='errorClass'>
-    <td>dev_login.TestBaiDu</td>
-    <td>1</td>
+    <td>unittest.loader._FailedTest</td>
+    <td>2</td>
     <td>0</td>
     <td>0</td>
-    <td>1</td>
-    <td><a href="javascript:showClassDetail('c1',1)">详情</a></td>
+    <td>2</td>
+    <td><a href="javascript:showClassDetail('c1',2)">详情</a></td>
 </tr>
 
 <tr id='ft1.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_search_0</div></td>
+    <td class='errorCase'><div class='testcase'>test_baidu</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -251,21 +251,58 @@ function showOutput(id, name) {
         </div>
         <pre>
         
-ft1.1: Traceback (most recent call last):
-  File "/Users/youjia/Desktop/Test_framework-master/test/case/dev_login.py", line 25, in test_search_0
-    links = self.driver.find_elements_by_xpath('//*[@id="btnSubmit"]"]')
-  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 410, in find_elements_by_xpath
-    return self.find_elements(by=By.XPATH, value=xpath)
-  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 1005, in find_elements
-    return self.execute(Command.FIND_ELEMENTS, {
+ft1.1: ImportError: Failed to import test module: test_baidu
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/unittest/loader.py", line 436, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/unittest/loader.py", line 377, in _get_module_from_name
+    __import__(name)
+  File "/Users/youjia/Desktop/Test_framework-master/test/case/test_baidu.py", line 16, in &lt;module&gt;
+    driver.find_element(*locator_kw).send_keys('selenium')
+  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 976, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
   File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
     self.error_handler.check_response(response)
   File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression //*[@id="btnSubmit"]"] because of the following error:
-SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="btnSubmit"]"]' is not a valid XPath expression.
-  (Session info: chrome=86.0.4240.75)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"id","selector":"kw"}
+  (Session info: chrome=86.0.4240.80)
   (Driver info: chromedriver=2.35.528157 (4429ca2590d6988c0745c24c8858745aaaec01ef),platform=Mac OS X 10.15.6 x86_64)
+
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_four</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
+        错误</a>
+
+    <div id='div_ft1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.2: ImportError: Failed to import test module: test_four
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/unittest/loader.py", line 436, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/unittest/loader.py", line 377, in _get_module_from_name
+    __import__(name)
+  File "/Users/youjia/Desktop/Test_framework-master/test/case/test_four.py", line 28, in &lt;module&gt;
+    time.sleep(5)
+AttributeError: type object 'datetime.time' has no attribute 'sleep'
 
 
 
@@ -277,16 +314,16 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="bt
 </tr>
 
 <tr class='errorClass'>
-    <td>dev_search.TestLogin</td>
-    <td>4</td>
+    <td>test_baidu_2.TestBaiDu</td>
+    <td>2</td>
     <td>0</td>
     <td>0</td>
-    <td>4</td>
-    <td><a href="javascript:showClassDetail('c2',4)">详情</a></td>
+    <td>2</td>
+    <td><a href="javascript:showClassDetail('c2',2)">详情</a></td>
 </tr>
 
 <tr id='ft2.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_search</div></td>
+    <td class='errorCase'><div class='testcase'>test_search_0</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -300,12 +337,19 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="bt
         </div>
         <pre>
         
-ft2.1: 
-SubTestCase Error:
-test_search (dev_search.TestLogin) (data={'username': 'python', 'password': 123.0})Traceback (most recent call last):
-  File "/Users/youjia/Desktop/Test_framework-master/test/case/dev_search.py", line 25, in test_search
-    self.sub_setUp()
-AttributeError: 'TestLogin' object has no attribute 'sub_setUp'
+ft2.1: Traceback (most recent call last):
+  File "/Users/youjia/Desktop/Test_framework-master/test/case/test_baidu_2.py", line 24, in test_search_0
+    self.driver.find_element(*self.locator_kw).send_keys('selenium 灰蓝')
+  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 976, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"id","selector":"kw"}
+  (Session info: chrome=86.0.4240.80)
+  (Driver info: chromedriver=2.35.528157 (4429ca2590d6988c0745c24c8858745aaaec01ef),platform=Mac OS X 10.15.6 x86_64)
+
 
 
         </pre>
@@ -316,7 +360,7 @@ AttributeError: 'TestLogin' object has no attribute 'sub_setUp'
 </tr>
 
 <tr id='ft2.2' class='none'>
-    <td class='errorCase'><div class='testcase'>test_search</div></td>
+    <td class='errorCase'><div class='testcase'>test_search_1</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -330,42 +374,19 @@ AttributeError: 'TestLogin' object has no attribute 'sub_setUp'
         </div>
         <pre>
         
-ft2.2: 
-SubTestCase Error:
-test_search (dev_search.TestLogin) (data={'username': 'selenium', 'password': 124.0})Traceback (most recent call last):
-  File "/Users/youjia/Desktop/Test_framework-master/test/case/dev_search.py", line 25, in test_search
-    self.sub_setUp()
-AttributeError: 'TestLogin' object has no attribute 'sub_setUp'
+ft2.2: Traceback (most recent call last):
+  File "/Users/youjia/Desktop/Test_framework-master/test/case/test_baidu_2.py", line 32, in test_search_1
+    self.driver.find_element(*self.locator_kw).send_keys('Python selenium')
+  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 976, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"id","selector":"kw"}
+  (Session info: chrome=86.0.4240.80)
+  (Driver info: chromedriver=2.35.528157 (4429ca2590d6988c0745c24c8858745aaaec01ef),platform=Mac OS X 10.15.6 x86_64)
 
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='ft2.3' class='none'>
-    <td class='errorCase'><div class='testcase'>test_search</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.3')" >
-        错误</a>
-
-    <div id='div_ft2.3' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.3').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft2.3: 
-SubTestCase Error:
-test_search (dev_search.TestLogin) (data={'username': 'postman', 'password': 125.0})Traceback (most recent call last):
-  File "/Users/youjia/Desktop/Test_framework-master/test/case/dev_search.py", line 25, in test_search
-    self.sub_setUp()
-AttributeError: 'TestLogin' object has no attribute 'sub_setUp'
 
 
         </pre>
@@ -375,29 +396,472 @@ AttributeError: 'TestLogin' object has no attribute 'sub_setUp'
     </td>
 </tr>
 
-<tr id='ft2.4' class='none'>
+<tr class='errorClass'>
+    <td>test_baidu_3.TestBaiDu</td>
+    <td>3</td>
+    <td>0</td>
+    <td>0</td>
+    <td>3</td>
+    <td><a href="javascript:showClassDetail('c3',3)">详情</a></td>
+</tr>
+
+<tr id='ft3.1' class='none'>
     <td class='errorCase'><div class='testcase'>test_search</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.4')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.1')" >
         错误</a>
 
-    <div id='div_ft2.4' class="popup_window">
+    <div id='div_ft3.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.4').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft2.4: Traceback (most recent call last):
-  File "/Users/youjia/Desktop/Test_framework-master/test/case/dev_search.py", line 31, in test_search
-    self.driver.find_elements_by_xpath("//input[@name='handle']")[-1].send_keys(d['password'])
-  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webelement.py", line 478, in send_keys
-    {'text': "".join(keys_to_typing(value)),
-  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/common/utils.py", line 150, in keys_to_typing
-    for i in range(len(val)):
-TypeError: object of type 'float' has no len()
+ft3.1: 
+SubTestCase Error:
+test_search (test_baidu_3.TestBaiDu) (data={'search': 'python'})Traceback (most recent call last):
+  File "/Users/youjia/Desktop/Test_framework-master/test/case/test_baidu_3.py", line 30, in test_search
+    self.driver.find_element(*self.locator_kw).send_keys(d['search'])
+  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 976, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"id","selector":"kw"}
+  (Session info: chrome=86.0.4240.80)
+  (Driver info: chromedriver=2.35.528157 (4429ca2590d6988c0745c24c8858745aaaec01ef),platform=Mac OS X 10.15.6 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft3.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_search</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.2')" >
+        错误</a>
+
+    <div id='div_ft3.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft3.2: 
+SubTestCase Error:
+test_search (test_baidu_3.TestBaiDu) (data={'search': 'selenium'})Traceback (most recent call last):
+  File "/Users/youjia/Desktop/Test_framework-master/test/case/test_baidu_3.py", line 30, in test_search
+    self.driver.find_element(*self.locator_kw).send_keys(d['search'])
+  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 976, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"id","selector":"kw"}
+  (Session info: chrome=86.0.4240.80)
+  (Driver info: chromedriver=2.35.528157 (4429ca2590d6988c0745c24c8858745aaaec01ef),platform=Mac OS X 10.15.6 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft3.3' class='none'>
+    <td class='errorCase'><div class='testcase'>test_search</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.3')" >
+        错误</a>
+
+    <div id='div_ft3.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft3.3: 
+SubTestCase Error:
+test_search (test_baidu_3.TestBaiDu) (data={'search': 'postman'})Traceback (most recent call last):
+  File "/Users/youjia/Desktop/Test_framework-master/test/case/test_baidu_3.py", line 30, in test_search
+    self.driver.find_element(*self.locator_kw).send_keys(d['search'])
+  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 976, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"id","selector":"kw"}
+  (Session info: chrome=86.0.4240.80)
+  (Driver info: chromedriver=2.35.528157 (4429ca2590d6988c0745c24c8858745aaaec01ef),platform=Mac OS X 10.15.6 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_baidu_4.TestBaiDu</td>
+    <td>3</td>
+    <td>0</td>
+    <td>0</td>
+    <td>3</td>
+    <td><a href="javascript:showClassDetail('c4',3)">详情</a></td>
+</tr>
+
+<tr id='ft4.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_search</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.1')" >
+        错误</a>
+
+    <div id='div_ft4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft4.1: 
+SubTestCase Error:
+test_search (test_baidu_4.TestBaiDu) (data={'search': 'python'})Traceback (most recent call last):
+  File "/Users/youjia/Desktop/Test_framework-master/test/case/test_baidu_4.py", line 27, in test_search
+    self.driver.find_element_by_id(*self.locator_kw).send_keys(d['search'])
+AttributeError: 'TestBaiDu' object has no attribute 'locator_kw'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft4.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_search</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.2')" >
+        错误</a>
+
+    <div id='div_ft4.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft4.2: 
+SubTestCase Error:
+test_search (test_baidu_4.TestBaiDu) (data={'search': 'selenium'})Traceback (most recent call last):
+  File "/Users/youjia/Desktop/Test_framework-master/test/case/test_baidu_4.py", line 27, in test_search
+    self.driver.find_element_by_id(*self.locator_kw).send_keys(d['search'])
+AttributeError: 'TestBaiDu' object has no attribute 'locator_kw'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft4.3' class='none'>
+    <td class='errorCase'><div class='testcase'>test_search</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.3')" >
+        错误</a>
+
+    <div id='div_ft4.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft4.3: 
+SubTestCase Error:
+test_search (test_baidu_4.TestBaiDu) (data={'search': 'postman'})Traceback (most recent call last):
+  File "/Users/youjia/Desktop/Test_framework-master/test/case/test_baidu_4.py", line 27, in test_search
+    self.driver.find_element_by_id(*self.locator_kw).send_keys(d['search'])
+AttributeError: 'TestBaiDu' object has no attribute 'locator_kw'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_baidu_5.TestBaiDu</td>
+    <td>3</td>
+    <td>3</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',3)">详情</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_search</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        通过</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1: 
+SubTestCase Pass:
+test_search (test_baidu_5.TestBaiDu) (data={'search': 'python'})
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_search</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.2')" >
+        通过</a>
+
+    <div id='div_pt5.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.2: 
+SubTestCase Pass:
+test_search (test_baidu_5.TestBaiDu) (data={'search': 'selenium'})
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_search</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.3')" >
+        通过</a>
+
+    <div id='div_pt5.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.3: 
+SubTestCase Pass:
+test_search (test_baidu_5.TestBaiDu) (data={'search': 'postman'})
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_baidu_6.TestBaiDu</td>
+    <td>3</td>
+    <td>3</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',3)">详情</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_search</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        通过</a>
+
+    <div id='div_pt6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.1: 
+SubTestCase Pass:
+test_search (test_baidu_6.TestBaiDu) (data={'search': 'python'})
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt6.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_search</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.2')" >
+        通过</a>
+
+    <div id='div_pt6.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.2: 
+SubTestCase Pass:
+test_search (test_baidu_6.TestBaiDu) (data={'search': 'selenium'})
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt6.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_search</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.3')" >
+        通过</a>
+
+    <div id='div_pt6.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.3: 
+SubTestCase Pass:
+test_search (test_baidu_6.TestBaiDu) (data={'search': 'postman'})
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_one.UntitledTestCase1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c7',1)">详情</a></td>
+</tr>
+
+<tr id='pt7.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_untitled_test_case1</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_three.UntitledTestCase3</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c8',1)">详情</a></td>
+</tr>
+
+<tr id='pt8.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_untitled_test_case3</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_two.UntitledTestCase4</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c9',1)">详情</a></td>
+</tr>
+
+<tr id='ft9.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_untitled_test_case4</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft9.1')" >
+        错误</a>
+
+    <div id='div_ft9.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft9.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft9.1: Traceback (most recent call last):
+  File "/Users/youjia/Desktop/Test_framework-master/test/case/test_two.py", line 23, in test_untitled_test_case4
+    driver.find_element_by_link_text(u"添加").click()
+  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 428, in find_element_by_link_text
+    return self.find_element(by=By.LINK_TEXT, value=link_text)
+  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 976, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/Users/youjia/Desktop/Test_framework-master/venv/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"link text","selector":"添加"}
+  (Session info: chrome=86.0.4240.80)
+  (Driver info: chromedriver=2.35.528157 (4429ca2590d6988c0745c24c8858745aaaec01ef),platform=Mac OS X 10.15.6 x86_64)
+
 
 
         </pre>
@@ -409,10 +873,10 @@ TypeError: object of type 'float' has no len()
 
 <tr id='total_row'>
     <td>总计</td>
-    <td>5</td>
+    <td>19</td>
+    <td>8</td>
     <td>0</td>
-    <td>0</td>
-    <td>5</td>
+    <td>11</td>
     <td>&nbsp;</td>
 </tr>
 </table>
