@@ -7,10 +7,8 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 import unittest, time, re
 
-from utils.log import logger
 
-
-class UntitledTestCase2(unittest.TestCase):
+class UntitledTestCase4(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(30)
@@ -18,26 +16,28 @@ class UntitledTestCase2(unittest.TestCase):
         self.verificationErrors = []
         self.accept_next_alert = True
 
-    def test_untitled_test_case2(self):
+    def test_untitled_test_case4(self):
         driver = self.driver
-        driver.get("http://10.0.1.184/youjia-admin/index")
-        # ERROR: Caught exception [ERROR: Unsupported command [selectFrame | index=1 | ]]
-        driver.find_element_by_name("goodsName").click()
-        driver.find_element_by_name("goodsName").clear()
-        driver.find_element_by_name("goodsName").send_keys(u"苹果")
-        driver.find_element_by_link_text(u"搜索").click()
-        driver.find_element_by_name("goodsName").click()
-        driver.find_element_by_name("goodsName").clear()
-        driver.find_element_by_name("goodsName").send_keys("123")
-        driver.find_element_by_link_text(u"搜索").click()
-        driver.find_element_by_name("goodsName").click()
-        driver.find_element_by_name("goodsName").clear()
-        driver.find_element_by_name("goodsName").send_keys(u"苹  果")
-        driver.find_element_by_link_text(u"搜索").click()
-        links = self.driver.find_elements_by_xpath(
-            '/html/body/div/div/div[1]/form/div/ul/li[10]/a[1]')
-        for link in links:
-            logger.info(link.text)
+        driver.get("http://10.0.1.183/youjia-admin/index")
+        # ERROR: Caught exception [ERROR: Unsupported command [selectFrame | index=3 | ]]
+        driver.find_element_by_link_text(u"添加").click()
+        # ERROR: Caught exception [ERROR: Unsupported command [selectFrame | index=0 | ]]
+        driver.find_element_by_name("cardName").click()
+        driver.find_element_by_name("cardName").clear()
+        driver.find_element_by_name("cardName").send_keys("youjia")
+        driver.find_element_by_name("cardSign").click()
+        driver.find_element_by_name("cardSign").clear()
+        driver.find_element_by_name("cardSign").send_keys("1234")
+        driver.find_element_by_id("expiryDate").click()
+        driver.find_element_by_xpath("//tr[5]/td[4]").click()
+        driver.find_element_by_id("parValue").click()
+        driver.find_element_by_id("parValue").clear()
+        driver.find_element_by_id("parValue").send_keys("100")
+        driver.find_element_by_id("quantity").click()
+        driver.find_element_by_id("quantity").clear()
+        driver.find_element_by_id("quantity").send_keys("6")
+        # ERROR: Caught exception [ERROR: Unsupported command [selectFrame | relative=parent | ]]
+        driver.find_element_by_link_text(u"关闭").click()
 
     def is_element_present(self, how, what):
         try:
