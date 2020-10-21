@@ -8,7 +8,7 @@ from utils.config import REPORT_PATH
 def allTest():
     suite = unittest.TestLoader().discover(
         start_dir=os.path.dirname(__file__),  # 文件地址
-        pattern="test_*.py",  # 文件类型
+        pattern="test_two.py",  # 文件类型
         top_level_dir=None)
     return suite
 
@@ -16,11 +16,6 @@ def allTest():
 def run():
     unittest.TextTestRunner(verbosity=2).run(allTest())
 
-
-def get_nowtime(): '''时间'''
-
-
-pass
 
 if __name__ == "__main__":
     report = REPORT_PATH + '/testReport.html'

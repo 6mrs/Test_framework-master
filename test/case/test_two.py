@@ -1,73 +1,72 @@
 # -*- coding: utf-8 -*-
+import time
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
-import unittest, time, re
+import unittest
 
 
-class UntitledTestCase4(unittest.TestCase):
+
+class UntitledTestCase(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(30)
         self.base_url = "https://www.google.com/"
-        self.verificationErrors = []
-        self.accept_next_alert = True
-
-    def test_untitled_test_case4(self):
+        self.driver.get('http://10.0.1.183/youjia-admin/login/')
         driver = self.driver
-        driver.get("http://10.0.1.183/youjia-admin/index")
-        # ERROR: Caught exception [ERROR: Unsupported command [selectFrame | index=3 | ]]
-        driver.find_element_by_link_text("添加").click()
-        # ERROR: Caught exception [ERROR: Unsupported command [selectFrame | index=0 | ]]
-        driver.find_element_by_name("cardName").click()
-        driver.find_element_by_name("cardName").clear()
-        driver.find_element_by_name("cardName").send_keys("youjia")
-        driver.find_element_by_name("cardSign").click()
-        driver.find_element_by_name("cardSign").clear()
-        driver.find_element_by_name("cardSign").send_keys("1234")
-        driver.find_element_by_id("expiryDate").click()
-        driver.find_element_by_xpath("//tr[5]/td[4]").click()
-        driver.find_element_by_id("parValue").click()
-        driver.find_element_by_id("parValue").clear()
-        driver.find_element_by_id("parValue").send_keys("100")
-        driver.find_element_by_id("quantity").click()
-        driver.find_element_by_id("quantity").clear()
-        driver.find_element_by_id("quantity").send_keys("6")
-        # ERROR: Caught exception [ERROR: Unsupported command [selectFrame | relative=parent | ]]
-        driver.find_element_by_link_text(u"关闭").click()
 
-    def is_element_present(self, how, what):
-        try:
-            self.driver.find_element(by=how, value=what)
-        except NoSuchElementException as e:
-            return False
-        return True
+    # 定义方法
+    def login(self, username, password):
+        self.driver.find_element_by_name('username').send_keys(username)
+        self.driver.find_element_by_name('password').send_keys(password)
+        self.driver.find_element_by_id('btnSubmit').click()
 
-    def is_alert_present(self):
-        try:
-            self.driver.switch_to_alert()
-        except NoAlertPresentException as e:
-            return False
-        return True
+    def test_untitled_test_case1(self):
+        self.driver.find_element_by_name("username").send_keys("admin")  # 用户名正确，密码错误
+        self.driver.find_element_by_name("password").clear()
+        self.driver.find_element_by_name("password").send_keys("123")
+        self.driver.find_element_by_id("btnSubmit").click()
+        time.sleep(3)
+        error_message = self.driver.find_element_by_xpath('/html/body/div[2]').text
+        self.assertIn('用户不存在/密码错误', error_message)  # 用assertIn(a,b)方法来断言 a in b
+        self.driver.get_screenshot_as_file("/Users/youjia/Desktop/测试图/login1.jpg")
+        # a = self.driver.current_url  # current_url 方法可以得到当前页面的URL
+        # b = "http://10.0.1.183/youjia-admin/index"
+        # self.assertEqual(a, b, '登录失败')
 
-    def close_alert_and_get_its_text(self):
-        try:
-            alert = self.driver.switch_to_alert()
-            alert_text = alert.text
-            if self.accept_next_alert:
-                alert.accept()
-            else:
-                alert.dismiss()
-            return alert_text
-        finally:
-            self.accept_next_alert = True
+    def test_untitled_test_case2(self):
+        self.driver.find_element_by_name("username").clear()  # 用户名正确，密码正确
+        self.driver.find_element_by_name("username").send_keys("admin")
+        self.driver.find_element_by_name("password").clear()
+        self.driver.find_element_by_name("password").send_keys("youjia")
+        self.driver.find_element_by_id("btnSubmit").click()
+        time.sleep(3)
+        a = self.driver.current_url  # current_url 方法可以得到当前页面的URL
+        b = "http://10.0.1.183/youjia-admin/index"
+        self.assertEqual(a, b, '登录失败')
+
+    def test_untitled_test_case3(self):
+        self.driver.find_element_by_name("username").clear()  # 用户名错误，密码正确
+        self.driver.find_element_by_name("username").send_keys("one")
+        self.driver.find_element_by_name("password").clear()
+        self.driver.find_element_by_name("password").send_keys("youjia")
+        self.driver.find_element_by_id("btnSubmit").click()
+        time.sleep(3)
+        error_message = self.driver.find_element_by_xpath('/html/body/div[2]').text
+        self.assertIn('用户不存在/密码错误', error_message)
+        self.driver.get_screenshot_as_file("/Users/youjia/Desktop/测试图/login2.jpg")
+        # a = self.driver.current_url  # current_url 方法可以得到当前页面的URL
+        # b = "http://10.0.1.183/youjia-admin/index"
+        # self.assertEqual(a, b, '登录失败')
 
     def tearDown(self):
+        time.sleep(2)
+        print('自动测试完毕！')
         self.driver.quit()
-        self.assertEqual([], self.verificationErrors)
 
 
 if __name__ == "__main__":

@@ -1,33 +1,59 @@
-#-*- coding:utf8 -*-
-
-# 导入selenium2中的webdriver库
-from datetime import time
-
+# -*- coding: utf-8 -*-
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
+from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoAlertPresentException
+import unittest, time, re
 
-# 实例化出一个Firefox浏览器
-driver = webdriver.Chrome()
 
-# 设置浏览器窗口的位置和大小
-driver.set_window_position(20,40)
-driver.set_window_size(1100,700)
+class UntitledTestCase(unittest.TestCase):
+    def setUp(self):
+        self.driver = webdriver.Chrome()
+        self.driver.implicitly_wait(30)
+        self.base_url = "https://www.google.com/"
+        self.driver.get('http://10.0.1.183/youjia-admin/login')
+        self.driver.get('http://10.0.1.183/youjia-admin/app/goods')
+        driver = self.driver
 
-# 打开一个页面（QQ空间登录页）
-driver.get("http://qzone.qq.com")
+    def test_untitled_test_case(self):
+        self.driver.find_element_by_name("username").clear()  # 用户名正确，密码正确
+        self.driver.find_element_by_name("username").send_keys("admin")
+        self.driver.find_element_by_name("password").clear()
+        self.driver.find_element_by_name("password").send_keys("youjia")
+        self.driver.find_element_by_id("btnSubmit").click()
+        time.sleep(3)
+        a = self.driver.current_url  # current_url 方法可以得到当前页面的URL
+        b = "http://10.0.1.183/youjia-admin/index"
+        self.assertEqual(a, b, '登录失败')
+        cookie = self.driver.get_cookies()
+        print(cookie)
 
-# 登录表单在页面的框架中中，所以要切换到该框架
-driver.switch_to_frame('login_frame')
+        # driver = self.driver
+        # driver.get("http://10.0.1.183/youjia-admin")
+        # driver.add_cookie({'name': 'JSESSIONID', 'value': '087556d1-10a0-47bf-9711-0348d1028b62'})
+        # driver.add_cookie({'name': 'Hm_lvt_9bd56a6d0766b887592ee921aa94763f',
+        #                    'value': '1600653214,1600916935,1602579523'})
+        # driver.add_cookie({'name': 'Hm_lpvt_9bd56a6d0766b887592ee921aa94763f', 'value': '1602809960'})
+        time.sleep(3)
+        self.driver.implicitly_wait(10)
+        self.driver.switch_to.window(self.driver.window_handles[-1])
+        self.driver.find_element_by_xpath('//*[@id="side-menu"]/li[5]/a/span[1]').click()
+        time.sleep(1)
+        self.driver.find_element_by_xpath('//*[@id="side-menu"]/li[5]/ul/li[3]/a').click()
+        time.sleep(5)
 
-# 通过使用选择器选择到表单元素进行模拟输入和点击按钮提交
-driver.find_element_by_id('switcher_plogin').click()
-driver.find_element_by_id('u').clear()
-driver.find_element_by_id('u').send_keys('1534063043')
-driver.find_element_by_id('p').clear()
-driver.find_element_by_id('p').send_keys('zzzz')#password
-driver.find_element_by_id('login_button').click()
-time.sleep(5)
+        current_url = self.driver.current_url  # 获取当前页面的url
+        print(current_url)
+        #
+        self.driver.find_element_by_name('goodsName').send_keys('京东')
+        self.driver.find_element_by_xpath('//*[@id="formId"]/div/ul/li[10]/a[1]').click()
+        #
 
-# do something
+    def tearDown(self):
+        self.driver.quit()
 
-# 退出窗口
-driver.quit()
+
+if __name__ == "__main__":
+    unittest.main()
