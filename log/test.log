@@ -1,283 +1,67 @@
-2020-09-25 16:33:35,340 - framework - DEBUG - GET http://10.0.1.184/youjia-admin/login
-2020-09-25 16:33:35,345 - framework - DEBUG - 请求成功: <Response [200]>
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
-    <title>登录优佳系统</title>
-    <meta name="description" content="优佳后台管理框架">
-    <link href="/youjia-admin/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="/youjia-admin/css/font-awesome.min.css" rel="stylesheet"/>
-    <link href="/youjia-admin/css/style.css" rel="stylesheet"/>
-    <link href="/youjia-admin/css/login.min.css" rel="stylesheet"/>
-    <link href="/youjia-admin/youjia/css/ry-ui.css?v=4.0.0" rel="stylesheet"/>
-    <!--[if lt IE 9]>
-    <meta http-equiv="refresh" content="0;ie.html"/>
-    <![endif]-->
-    <link rel="shortcut icon" href="favicon.ico"/>
-    <style type="text/css">label.error {
-        position: inherit;
-    }</style>
-    <script>
-        if (window.top !== window.self) {
-            window.top.location = window.location
-        }
-        ;
-    </script>
-</head>
-
-<body class="signin">
-
-<div class="signinpanel">
-    <div class="row">
-        <div class="col-sm-7">
-            <div class="signin-info">
-                <div class="logopanel m-b">
-                    <h1>优佳 后台管理系统</h1>
-                </div>
-                <div class="m-b"></div>
-                <h4>欢迎使用 <strong>优佳 后台管理系统</strong></h4>
-            </div>
-        </div>
-        <div class="col-sm-5">
-            <form id="signupForm">
-                <h4 class="no-margins">登录：</h4>
-                <p class="m-t-md">优佳精品，悦享生活</p>
-                <input type="text" name="username" class="form-control uname" placeholder="用户名" value=""/>
-                <input type="password" name="password" class="form-control pword" placeholder="密码" value=""/>
-                <div class="row m-t">
-                    <div class="col-xs-6">
-                        <input type="text" name="validateCode" class="form-control code" placeholder="验证码" maxlength="5"
-                               autocomplete="off">
-                    </div>
-                    <div class="col-xs-6">
-                        <a href="javascript:void(0);" title="点击更换验证码">
-                            <img src="captcha/captchaImage?type=math" class="imgcode" width="85%"/>
-                        </a>
-                    </div>
-                </div>
-                <div class="checkbox-custom">
-                    <input type="checkbox" id="rememberme" name="rememberme"> <label for="rememberme">记住我</label>
-                </div>
-                <button class="btn btn-success btn-block" id="btnSubmit" data-loading="正在验证登录，请稍后...">登录</button>
-            </form>
-        </div>
-    </div>
-    <div class="signup-footer">
-        <div class="pull-left">
-            &copy; 2019 All Rights Reserved. Gavin <br>
-        </div>
-    </div>
-</div>
-<script> var ctx = "\/youjia-admin\/"; var captchaType = "math"; </script>
-<!-- 全局js -->
-<script src="/youjia-admin/js/jquery.min.js"></script>
-<script src="/youjia-admin/js/bootstrap.min.js"></script>
-<!-- 验证插件 -->
-<script src="/youjia-admin/ajax/libs/validate/jquery.validate.min.js"></script>
-<script src="/youjia-admin/ajax/libs/validate/messages_zh.min.js"></script>
-<script src="/youjia-admin/ajax/libs/layer/layer.min.js"></script>
-<script src="/youjia-admin/ajax/libs/blockUI/jquery.blockUI.js"></script>
-<script src="/youjia-admin/youjia/js/ry-ui.js?v=4.0.0"></script>
-<script src="/youjia-admin/youjia/login.js"></script>
-</body>
-</html>
-
-2020-09-25 16:33:35,345 - framework - DEBUG - <!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
-    <title>登录优佳系统</title>
-    <meta name="description" content="优佳后台管理框架">
-    <link href="/youjia-admin/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="/youjia-admin/css/font-awesome.min.css" rel="stylesheet"/>
-    <link href="/youjia-admin/css/style.css" rel="stylesheet"/>
-    <link href="/youjia-admin/css/login.min.css" rel="stylesheet"/>
-    <link href="/youjia-admin/youjia/css/ry-ui.css?v=4.0.0" rel="stylesheet"/>
-    <!--[if lt IE 9]>
-    <meta http-equiv="refresh" content="0;ie.html"/>
-    <![endif]-->
-    <link rel="shortcut icon" href="favicon.ico"/>
-    <style type="text/css">label.error {
-        position: inherit;
-    }</style>
-    <script>
-        if (window.top !== window.self) {
-            window.top.location = window.location
-        }
-        ;
-    </script>
-</head>
-
-<body class="signin">
-
-<div class="signinpanel">
-    <div class="row">
-        <div class="col-sm-7">
-            <div class="signin-info">
-                <div class="logopanel m-b">
-                    <h1>优佳 后台管理系统</h1>
-                </div>
-                <div class="m-b"></div>
-                <h4>欢迎使用 <strong>优佳 后台管理系统</strong></h4>
-            </div>
-        </div>
-        <div class="col-sm-5">
-            <form id="signupForm">
-                <h4 class="no-margins">登录：</h4>
-                <p class="m-t-md">优佳精品，悦享生活</p>
-                <input type="text" name="username" class="form-control uname" placeholder="用户名" value=""/>
-                <input type="password" name="password" class="form-control pword" placeholder="密码" value=""/>
-                <div class="row m-t">
-                    <div class="col-xs-6">
-                        <input type="text" name="validateCode" class="form-control code" placeholder="验证码" maxlength="5"
-                               autocomplete="off">
-                    </div>
-                    <div class="col-xs-6">
-                        <a href="javascript:void(0);" title="点击更换验证码">
-                            <img src="captcha/captchaImage?type=math" class="imgcode" width="85%"/>
-                        </a>
-                    </div>
-                </div>
-                <div class="checkbox-custom">
-                    <input type="checkbox" id="rememberme" name="rememberme"> <label for="rememberme">记住我</label>
-                </div>
-                <button class="btn btn-success btn-block" id="btnSubmit" data-loading="正在验证登录，请稍后...">登录</button>
-            </form>
-        </div>
-    </div>
-    <div class="signup-footer">
-        <div class="pull-left">
-            &copy; 2019 All Rights Reserved. Gavin <br>
-        </div>
-    </div>
-</div>
-<script> var ctx = "\/youjia-admin\/"; var captchaType = "math"; </script>
-<!-- 全局js -->
-<script src="/youjia-admin/js/jquery.min.js"></script>
-<script src="/youjia-admin/js/bootstrap.min.js"></script>
-<!-- 验证插件 -->
-<script src="/youjia-admin/ajax/libs/validate/jquery.validate.min.js"></script>
-<script src="/youjia-admin/ajax/libs/validate/messages_zh.min.js"></script>
-<script src="/youjia-admin/ajax/libs/layer/layer.min.js"></script>
-<script src="/youjia-admin/ajax/libs/blockUI/jquery.blockUI.js"></script>
-<script src="/youjia-admin/youjia/js/ry-ui.js?v=4.0.0"></script>
-<script src="/youjia-admin/youjia/login.js"></script>
-</body>
-</html>
-
-2020-09-25 16:34:33,580 - framework - DEBUG - GET https://www.baidu.com
-2020-09-25 16:34:33,612 - framework - DEBUG - 请求成功: <Response [200]>
+2020-11-19 09:26:37,860 - framework - ERROR - [Errno 61] Connection refused
+Traceback (most recent call last):
+  File "/Users/youjia/Desktop/Test_framework-master/utils/client.py", line 68, in connect
+    self._sock.connect((self.domain, self.port))
+ConnectionRefusedError: [Errno 61] Connection refused
+2020-11-19 09:37:50,419 - framework - DEBUG - GET https://www.baidu.com
+2020-11-19 09:37:50,434 - framework - DEBUG - 请求成功: <Response [200]>
 <!DOCTYPE html>
 <!--STATUS OK--><html> <head><meta http-equiv=content-type content=text/html;charset=utf-8><meta http-equiv=X-UA-Compatible content=IE=Edge><meta content=always name=referrer><link rel=stylesheet type=text/css href=https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/bdorz/baidu.min.css><title>百度一下，你就知道</title></head> <body link=#0000cc> <div id=wrapper> <div id=head> <div class=head_wrapper> <div class=s_form> <div class=s_form_wrapper> <div id=lg> <img hidefocus=true src=//www.baidu.com/img/bd_logo1.png width=270 height=129> </div> <form id=form name=f action=//www.baidu.com/s class=fm> <input type=hidden name=bdorz_come value=1> <input type=hidden name=ie value=utf-8> <input type=hidden name=f value=8> <input type=hidden name=rsv_bp value=1> <input type=hidden name=rsv_idx value=1> <input type=hidden name=tn value=baidu><span class="bg s_ipt_wr"><input id=kw name=wd class=s_ipt value maxlength=255 autocomplete=off autofocus=autofocus></span><span class="bg s_btn_wr"><input type=submit id=su value=百度一下 class="bg s_btn" autofocus></span> </form> </div> </div> <div id=u1> <a href=http://news.baidu.com name=tj_trnews class=mnav>新闻</a> <a href=https://www.hao123.com name=tj_trhao123 class=mnav>hao123</a> <a href=http://map.baidu.com name=tj_trmap class=mnav>地图</a> <a href=http://v.baidu.com name=tj_trvideo class=mnav>视频</a> <a href=http://tieba.baidu.com name=tj_trtieba class=mnav>贴吧</a> <noscript> <a href=http://www.baidu.com/bdorz/login.gif?login&amp;tpl=mn&amp;u=http%3A%2F%2Fwww.baidu.com%2f%3fbdorz_come%3d1 name=tj_login class=lb>登录</a> </noscript> <script>document.write('<a href="http://www.baidu.com/bdorz/login.gif?login&tpl=mn&u='+ encodeURIComponent(window.location.href+ (window.location.search === "" ? "?" : "&")+ "bdorz_come=1")+ '" name="tj_login" class="lb">登录</a>');
                 </script> <a href=//www.baidu.com/more/ name=tj_briicon class=bri style="display: block;">更多产品</a> </div> </div> </div> <div id=ftCon> <div id=ftConw> <p id=lh> <a href=http://home.baidu.com>关于百度</a> <a href=http://ir.baidu.com>About Baidu</a> </p> <p id=cp>&copy;2017&nbsp;Baidu&nbsp;<a href=http://www.baidu.com/duty/>使用百度前必读</a>&nbsp; <a href=http://jianyi.baidu.com/ class=cp-feedback>意见反馈</a>&nbsp;京ICP证030173号&nbsp; <img src=//www.baidu.com/img/gs.gif> </p> </div> </div> </div> </body> </html>
 
-2020-09-25 16:34:33,612 - framework - DEBUG - <!DOCTYPE html>
+2020-11-19 09:37:50,434 - framework - DEBUG - <!DOCTYPE html>
 <!--STATUS OK--><html> <head><meta http-equiv=content-type content=text/html;charset=utf-8><meta http-equiv=X-UA-Compatible content=IE=Edge><meta content=always name=referrer><link rel=stylesheet type=text/css href=https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/bdorz/baidu.min.css><title>百度一下，你就知道</title></head> <body link=#0000cc> <div id=wrapper> <div id=head> <div class=head_wrapper> <div class=s_form> <div class=s_form_wrapper> <div id=lg> <img hidefocus=true src=//www.baidu.com/img/bd_logo1.png width=270 height=129> </div> <form id=form name=f action=//www.baidu.com/s class=fm> <input type=hidden name=bdorz_come value=1> <input type=hidden name=ie value=utf-8> <input type=hidden name=f value=8> <input type=hidden name=rsv_bp value=1> <input type=hidden name=rsv_idx value=1> <input type=hidden name=tn value=baidu><span class="bg s_ipt_wr"><input id=kw name=wd class=s_ipt value maxlength=255 autocomplete=off autofocus=autofocus></span><span class="bg s_btn_wr"><input type=submit id=su value=百度一下 class="bg s_btn" autofocus></span> </form> </div> </div> <div id=u1> <a href=http://news.baidu.com name=tj_trnews class=mnav>新闻</a> <a href=https://www.hao123.com name=tj_trhao123 class=mnav>hao123</a> <a href=http://map.baidu.com name=tj_trmap class=mnav>地图</a> <a href=http://v.baidu.com name=tj_trvideo class=mnav>视频</a> <a href=http://tieba.baidu.com name=tj_trtieba class=mnav>贴吧</a> <noscript> <a href=http://www.baidu.com/bdorz/login.gif?login&amp;tpl=mn&amp;u=http%3A%2F%2Fwww.baidu.com%2f%3fbdorz_come%3d1 name=tj_login class=lb>登录</a> </noscript> <script>document.write('<a href="http://www.baidu.com/bdorz/login.gif?login&tpl=mn&u='+ encodeURIComponent(window.location.href+ (window.location.search === "" ? "?" : "&")+ "bdorz_come=1")+ '" name="tj_login" class="lb">登录</a>');
                 </script> <a href=//www.baidu.com/more/ name=tj_briicon class=bri style="display: block;">更多产品</a> </div> </div> </div> <div id=ftCon> <div id=ftConw> <p id=lh> <a href=http://home.baidu.com>关于百度</a> <a href=http://ir.baidu.com>About Baidu</a> </p> <p id=cp>&copy;2017&nbsp;Baidu&nbsp;<a href=http://www.baidu.com/duty/>使用百度前必读</a>&nbsp; <a href=http://jianyi.baidu.com/ class=cp-feedback>意见反馈</a>&nbsp;京ICP证030173号&nbsp; <img src=//www.baidu.com/img/gs.gif> </p> </div> </div> </div> </body> </html>
 
-2020-09-25 16:38:31,522 - framework - DEBUG - GET https://www.baidu.com
-2020-09-25 16:38:31,522 - framework - DEBUG - 请求成功: <Response [200]>
+2020-11-19 13:18:52,964 - framework - DEBUG - GET https://www.baidu.com
+2020-11-19 13:18:52,977 - framework - DEBUG - 请求成功: <Response [200]>
 <!DOCTYPE html>
 <!--STATUS OK--><html> <head><meta http-equiv=content-type content=text/html;charset=utf-8><meta http-equiv=X-UA-Compatible content=IE=Edge><meta content=always name=referrer><link rel=stylesheet type=text/css href=https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/bdorz/baidu.min.css><title>百度一下，你就知道</title></head> <body link=#0000cc> <div id=wrapper> <div id=head> <div class=head_wrapper> <div class=s_form> <div class=s_form_wrapper> <div id=lg> <img hidefocus=true src=//www.baidu.com/img/bd_logo1.png width=270 height=129> </div> <form id=form name=f action=//www.baidu.com/s class=fm> <input type=hidden name=bdorz_come value=1> <input type=hidden name=ie value=utf-8> <input type=hidden name=f value=8> <input type=hidden name=rsv_bp value=1> <input type=hidden name=rsv_idx value=1> <input type=hidden name=tn value=baidu><span class="bg s_ipt_wr"><input id=kw name=wd class=s_ipt value maxlength=255 autocomplete=off autofocus=autofocus></span><span class="bg s_btn_wr"><input type=submit id=su value=百度一下 class="bg s_btn" autofocus></span> </form> </div> </div> <div id=u1> <a href=http://news.baidu.com name=tj_trnews class=mnav>新闻</a> <a href=https://www.hao123.com name=tj_trhao123 class=mnav>hao123</a> <a href=http://map.baidu.com name=tj_trmap class=mnav>地图</a> <a href=http://v.baidu.com name=tj_trvideo class=mnav>视频</a> <a href=http://tieba.baidu.com name=tj_trtieba class=mnav>贴吧</a> <noscript> <a href=http://www.baidu.com/bdorz/login.gif?login&amp;tpl=mn&amp;u=http%3A%2F%2Fwww.baidu.com%2f%3fbdorz_come%3d1 name=tj_login class=lb>登录</a> </noscript> <script>document.write('<a href="http://www.baidu.com/bdorz/login.gif?login&tpl=mn&u='+ encodeURIComponent(window.location.href+ (window.location.search === "" ? "?" : "&")+ "bdorz_come=1")+ '" name="tj_login" class="lb">登录</a>');
                 </script> <a href=//www.baidu.com/more/ name=tj_briicon class=bri style="display: block;">更多产品</a> </div> </div> </div> <div id=ftCon> <div id=ftConw> <p id=lh> <a href=http://home.baidu.com>关于百度</a> <a href=http://ir.baidu.com>About Baidu</a> </p> <p id=cp>&copy;2017&nbsp;Baidu&nbsp;<a href=http://www.baidu.com/duty/>使用百度前必读</a>&nbsp; <a href=http://jianyi.baidu.com/ class=cp-feedback>意见反馈</a>&nbsp;京ICP证030173号&nbsp; <img src=//www.baidu.com/img/gs.gif> </p> </div> </div> </div> </body> </html>
 
-2020-09-25 16:38:31,522 - framework - DEBUG - <!DOCTYPE html>
+2020-11-19 13:18:52,978 - framework - DEBUG - <!DOCTYPE html>
 <!--STATUS OK--><html> <head><meta http-equiv=content-type content=text/html;charset=utf-8><meta http-equiv=X-UA-Compatible content=IE=Edge><meta content=always name=referrer><link rel=stylesheet type=text/css href=https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/bdorz/baidu.min.css><title>百度一下，你就知道</title></head> <body link=#0000cc> <div id=wrapper> <div id=head> <div class=head_wrapper> <div class=s_form> <div class=s_form_wrapper> <div id=lg> <img hidefocus=true src=//www.baidu.com/img/bd_logo1.png width=270 height=129> </div> <form id=form name=f action=//www.baidu.com/s class=fm> <input type=hidden name=bdorz_come value=1> <input type=hidden name=ie value=utf-8> <input type=hidden name=f value=8> <input type=hidden name=rsv_bp value=1> <input type=hidden name=rsv_idx value=1> <input type=hidden name=tn value=baidu><span class="bg s_ipt_wr"><input id=kw name=wd class=s_ipt value maxlength=255 autocomplete=off autofocus=autofocus></span><span class="bg s_btn_wr"><input type=submit id=su value=百度一下 class="bg s_btn" autofocus></span> </form> </div> </div> <div id=u1> <a href=http://news.baidu.com name=tj_trnews class=mnav>新闻</a> <a href=https://www.hao123.com name=tj_trhao123 class=mnav>hao123</a> <a href=http://map.baidu.com name=tj_trmap class=mnav>地图</a> <a href=http://v.baidu.com name=tj_trvideo class=mnav>视频</a> <a href=http://tieba.baidu.com name=tj_trtieba class=mnav>贴吧</a> <noscript> <a href=http://www.baidu.com/bdorz/login.gif?login&amp;tpl=mn&amp;u=http%3A%2F%2Fwww.baidu.com%2f%3fbdorz_come%3d1 name=tj_login class=lb>登录</a> </noscript> <script>document.write('<a href="http://www.baidu.com/bdorz/login.gif?login&tpl=mn&u='+ encodeURIComponent(window.location.href+ (window.location.search === "" ? "?" : "&")+ "bdorz_come=1")+ '" name="tj_login" class="lb">登录</a>');
                 </script> <a href=//www.baidu.com/more/ name=tj_briicon class=bri style="display: block;">更多产品</a> </div> </div> </div> <div id=ftCon> <div id=ftConw> <p id=lh> <a href=http://home.baidu.com>关于百度</a> <a href=http://ir.baidu.com>About Baidu</a> </p> <p id=cp>&copy;2017&nbsp;Baidu&nbsp;<a href=http://www.baidu.com/duty/>使用百度前必读</a>&nbsp; <a href=http://jianyi.baidu.com/ class=cp-feedback>意见反馈</a>&nbsp;京ICP证030173号&nbsp; <img src=//www.baidu.com/img/gs.gif> </p> </div> </div> </div> </body> </html>
 
-2020-10-15 13:47:09,377 - framework - INFO - Welcome to Python.org
-2020-10-15 13:47:09,458 - framework - INFO - 官方
-2020-10-15 13:47:09,467 - framework - INFO - Python(计算机程序设计语言) - 百度百科
-2020-10-15 13:47:09,477 - framework - INFO - Download Python | Python.org
-2020-10-15 13:47:09,487 - framework - INFO - Python 基础教程 | 菜鸟教程
-2020-10-15 13:47:09,497 - framework - INFO - 你都用 Python 来做什么? - 知乎
-2020-10-15 13:47:09,506 - framework - INFO - Python教程 - 廖雪峰的官方网站
-2020-10-15 13:47:09,516 - framework - INFO - Python3 * 和 ** 运算符_极客点儿-CSDN博客
-2020-10-15 13:47:09,526 - framework - INFO - Python基础教程,Python入门教程(非常详细)
-2020-10-15 13:47:09,536 - framework - INFO - Python 简介 | 菜鸟教程
-2020-10-15 13:47:09,547 - framework - INFO - PyChina - Python 中国社区
-2020-10-15 13:47:14,568 - framework - INFO - Selenium automates browsers. That's it!
-2020-10-15 13:47:14,578 - framework - INFO - 官方
-2020-10-15 13:47:14,588 - framework - INFO - Selenium(WEB自动化工具) - 百度百科
-2020-10-15 13:47:14,599 - framework - INFO - selenium库的基本使用 - 简书
-2020-10-15 13:47:14,610 - framework - INFO - selenium中文网 | selenium安装、selenium使用、selen...
-2020-10-15 13:47:14,619 - framework - INFO - Python Selenium库的使用_凯耐的博客-CSDN博客
-2020-10-15 13:47:14,629 - framework - INFO - selenium用法详解_天涯笨熊的博客-CSDN博客
-2020-10-15 13:47:14,640 - framework - INFO - selenium - 百度翻译
-2020-10-15 13:47:14,650 - framework - INFO - GitHub - SeleniumHQ/selenium: A browser automation...
-2020-10-15 13:47:14,660 - framework - INFO - Python+Selenium详解(超全)
-2020-10-15 13:47:19,790 - framework - INFO - Postman | The Collaboration Platform for API Devel...
-2020-10-15 13:47:19,802 - framework - INFO - Download Postman | Try Postman for Free
-2020-10-15 13:47:19,813 - framework - INFO - Download Postman | Try Postman for Free
-2020-10-15 13:47:19,822 - framework - INFO - Postman教程大全 - 简书
-2020-10-15 13:47:19,832 - framework - INFO - postman下载-postman插件官方下载「Chrome插件」-华军...
-2020-10-15 13:47:19,843 - framework - INFO - Postman中文版_Postman中文版官方免费下载[含插件]-下...
-2020-10-15 13:47:19,852 - framework - INFO - Postman使用详解_大痴小乙的博客-CSDN博客
-2020-10-15 13:47:19,862 - framework - INFO - postman - 百度翻译
-2020-10-15 13:47:19,872 - framework - INFO - postman安装使用教程---图文讲解_虚无境的博客-CSDN博客
-2020-10-15 14:55:44,069 - framework - INFO - Welcome to Python.org
-2020-10-15 14:55:44,087 - framework - INFO - 官方
-2020-10-15 14:55:44,098 - framework - INFO - Python Job Board | Python.org
-2020-10-15 14:55:44,108 - framework - INFO - Python(计算机程序设计语言) - 百度百科
-2020-10-15 14:55:44,118 - framework - INFO - Python Speed Center
-2020-10-15 14:55:44,128 - framework - INFO - Download Python | Python.org
-2020-10-15 14:55:44,139 - framework - INFO - Python 基础教程 | 菜鸟教程
-2020-10-15 14:55:44,149 - framework - INFO - 你都用 Python 来做什么? - 知乎
-2020-10-15 14:55:44,159 - framework - INFO - Python教程 - 廖雪峰的官方网站
-2020-10-15 14:55:44,169 - framework - INFO - python - 视频大全 - 高清在线观看
-2020-10-15 14:55:44,180 - framework - INFO - Python3 * 和 ** 运算符_极客点儿-CSDN博客
-2020-10-15 14:55:50,380 - framework - INFO - Selenium automates browsers. That's it!
-2020-10-15 14:55:50,391 - framework - INFO - 官方
-2020-10-15 14:55:50,402 - framework - INFO - Selenium(WEB自动化工具) - 百度百科
-2020-10-15 14:55:50,412 - framework - INFO - selenium库的基本使用 - 简书
-2020-10-15 14:55:50,422 - framework - INFO - selenium中文网 | selenium安装、selenium使用、selen...
-2020-10-15 14:55:50,433 - framework - INFO - Python Selenium库的使用_凯耐的博客-CSDN博客
-2020-10-15 14:55:50,443 - framework - INFO - selenium用法详解_天涯笨熊的博客-CSDN博客
-2020-10-15 14:55:50,454 - framework - INFO - selenium - 百度翻译
-2020-10-15 14:55:50,463 - framework - INFO - GitHub - SeleniumHQ/selenium: A browser automation...
-2020-10-15 14:55:50,474 - framework - INFO - Python+Selenium详解(超全)
-2020-10-15 14:55:55,925 - framework - INFO - Postman | The Collaboration Platform for API Devel...
-2020-10-15 14:55:55,936 - framework - INFO - Download Postman | Try Postman for Free
-2020-10-15 14:55:55,947 - framework - INFO - Download Postman | Try Postman for Free
-2020-10-15 14:55:55,958 - framework - INFO - Postman教程大全 - 简书
-2020-10-15 14:55:55,969 - framework - INFO - postman下载-postman插件官方下载「Chrome插件」-华军...
-2020-10-15 14:55:55,980 - framework - INFO - Postman中文版_Postman中文版官方免费下载[含插件]-下...
-2020-10-15 14:55:55,992 - framework - INFO - Postman使用详解_大痴小乙的博客-CSDN博客
-2020-10-15 14:55:56,004 - framework - INFO - postman - 百度翻译
-2020-10-15 14:55:56,018 - framework - INFO - postman安装使用教程---图文讲解_虚无境的博客-CSDN博客
-2020-10-15 14:56:09,381 - framework - INFO - Welcome to Python.org
-2020-10-15 14:56:09,392 - framework - INFO - 官方
-2020-10-15 14:56:09,403 - framework - INFO - Python(计算机程序设计语言) - 百度百科
-2020-10-15 14:56:09,415 - framework - INFO - Download Python | Python.org
-2020-10-15 14:56:09,425 - framework - INFO - Python 基础教程 | 菜鸟教程
-2020-10-15 14:56:09,438 - framework - INFO - 你都用 Python 来做什么? - 知乎
-2020-10-15 14:56:09,448 - framework - INFO - Python教程 - 廖雪峰的官方网站
-2020-10-15 14:56:09,460 - framework - INFO - Python3 * 和 ** 运算符_极客点儿-CSDN博客
-2020-10-15 14:56:09,472 - framework - INFO - Python基础教程,Python入门教程(非常详细)
-2020-10-15 14:56:09,482 - framework - INFO - Python 简介 | 菜鸟教程
-2020-10-15 14:56:09,494 - framework - INFO - PyChina - Python 中国社区
-2020-10-15 14:56:19,735 - framework - INFO - Selenium automates browsers. That's it!
-2020-10-15 14:56:20,171 - framework - INFO - 官方
-2020-10-15 14:56:20,182 - framework - INFO - Selenium(WEB自动化工具) - 百度百科
-2020-10-15 14:56:20,192 - framework - INFO - selenium库的基本使用 - 简书
-2020-10-15 14:56:20,202 - framework - INFO - selenium中文网 | selenium安装、selenium使用、selen...
-2020-10-15 14:56:20,213 - framework - INFO - Python Selenium库的使用_凯耐的博客-CSDN博客
-2020-10-15 14:56:20,244 - framework - INFO - selenium用法详解_天涯笨熊的博客-CSDN博客
-2020-10-15 14:56:20,254 - framework - INFO - selenium - 百度翻译
-2020-10-15 14:56:20,265 - framework - INFO - GitHub - SeleniumHQ/selenium: A browser automation...
-2020-10-15 14:56:20,545 - framework - INFO - Python+Selenium详解(超全)
-2020-10-15 14:56:32,056 - framework - INFO - Postman | The Collaboration Platform for API Devel...
-2020-10-15 14:56:32,069 - framework - INFO - Download Postman | Try Postman for Free
-2020-10-15 14:56:32,080 - framework - INFO - Download Postman | Try Postman for Free
-2020-10-15 14:56:32,091 - framework - INFO - Postman教程大全 - 简书
-2020-10-15 14:56:32,103 - framework - INFO - postman下载-postman插件官方下载「Chrome插件」-华军...
-2020-10-15 14:56:32,115 - framework - INFO - Postman中文版_Postman中文版官方免费下载[含插件]-下...
-2020-10-15 14:56:32,126 - framework - INFO - Postman使用详解_大痴小乙的博客-CSDN博客
-2020-10-15 14:56:32,136 - framework - INFO - postman安装使用教程---图文讲解_虚无境的博客-CSDN博客
-2020-10-15 14:56:32,148 - framework - INFO - postman - 百度翻译
-2020-10-15 14:57:05,870 - framework - INFO - 
+2020-11-19 13:18:56,578 - framework - DEBUG - GET https://www.baidu.com
+2020-11-19 13:18:56,578 - framework - DEBUG - 请求成功: <Response [200]>
+<!DOCTYPE html>
+<!--STATUS OK--><html> <head><meta http-equiv=content-type content=text/html;charset=utf-8><meta http-equiv=X-UA-Compatible content=IE=Edge><meta content=always name=referrer><link rel=stylesheet type=text/css href=https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/bdorz/baidu.min.css><title>百度一下，你就知道</title></head> <body link=#0000cc> <div id=wrapper> <div id=head> <div class=head_wrapper> <div class=s_form> <div class=s_form_wrapper> <div id=lg> <img hidefocus=true src=//www.baidu.com/img/bd_logo1.png width=270 height=129> </div> <form id=form name=f action=//www.baidu.com/s class=fm> <input type=hidden name=bdorz_come value=1> <input type=hidden name=ie value=utf-8> <input type=hidden name=f value=8> <input type=hidden name=rsv_bp value=1> <input type=hidden name=rsv_idx value=1> <input type=hidden name=tn value=baidu><span class="bg s_ipt_wr"><input id=kw name=wd class=s_ipt value maxlength=255 autocomplete=off autofocus=autofocus></span><span class="bg s_btn_wr"><input type=submit id=su value=百度一下 class="bg s_btn" autofocus></span> </form> </div> </div> <div id=u1> <a href=http://news.baidu.com name=tj_trnews class=mnav>新闻</a> <a href=https://www.hao123.com name=tj_trhao123 class=mnav>hao123</a> <a href=http://map.baidu.com name=tj_trmap class=mnav>地图</a> <a href=http://v.baidu.com name=tj_trvideo class=mnav>视频</a> <a href=http://tieba.baidu.com name=tj_trtieba class=mnav>贴吧</a> <noscript> <a href=http://www.baidu.com/bdorz/login.gif?login&amp;tpl=mn&amp;u=http%3A%2F%2Fwww.baidu.com%2f%3fbdorz_come%3d1 name=tj_login class=lb>登录</a> </noscript> <script>document.write('<a href="http://www.baidu.com/bdorz/login.gif?login&tpl=mn&u='+ encodeURIComponent(window.location.href+ (window.location.search === "" ? "?" : "&")+ "bdorz_come=1")+ '" name="tj_login" class="lb">登录</a>');
+                </script> <a href=//www.baidu.com/more/ name=tj_briicon class=bri style="display: block;">更多产品</a> </div> </div> </div> <div id=ftCon> <div id=ftConw> <p id=lh> <a href=http://home.baidu.com>关于百度</a> <a href=http://ir.baidu.com>About Baidu</a> </p> <p id=cp>&copy;2017&nbsp;Baidu&nbsp;<a href=http://www.baidu.com/duty/>使用百度前必读</a>&nbsp; <a href=http://jianyi.baidu.com/ class=cp-feedback>意见反馈</a>&nbsp;京ICP证030173号&nbsp; <img src=//www.baidu.com/img/gs.gif> </p> </div> </div> </div> </body> </html>
+
+2020-11-19 13:18:56,578 - framework - DEBUG - <!DOCTYPE html>
+<!--STATUS OK--><html> <head><meta http-equiv=content-type content=text/html;charset=utf-8><meta http-equiv=X-UA-Compatible content=IE=Edge><meta content=always name=referrer><link rel=stylesheet type=text/css href=https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/bdorz/baidu.min.css><title>百度一下，你就知道</title></head> <body link=#0000cc> <div id=wrapper> <div id=head> <div class=head_wrapper> <div class=s_form> <div class=s_form_wrapper> <div id=lg> <img hidefocus=true src=//www.baidu.com/img/bd_logo1.png width=270 height=129> </div> <form id=form name=f action=//www.baidu.com/s class=fm> <input type=hidden name=bdorz_come value=1> <input type=hidden name=ie value=utf-8> <input type=hidden name=f value=8> <input type=hidden name=rsv_bp value=1> <input type=hidden name=rsv_idx value=1> <input type=hidden name=tn value=baidu><span class="bg s_ipt_wr"><input id=kw name=wd class=s_ipt value maxlength=255 autocomplete=off autofocus=autofocus></span><span class="bg s_btn_wr"><input type=submit id=su value=百度一下 class="bg s_btn" autofocus></span> </form> </div> </div> <div id=u1> <a href=http://news.baidu.com name=tj_trnews class=mnav>新闻</a> <a href=https://www.hao123.com name=tj_trhao123 class=mnav>hao123</a> <a href=http://map.baidu.com name=tj_trmap class=mnav>地图</a> <a href=http://v.baidu.com name=tj_trvideo class=mnav>视频</a> <a href=http://tieba.baidu.com name=tj_trtieba class=mnav>贴吧</a> <noscript> <a href=http://www.baidu.com/bdorz/login.gif?login&amp;tpl=mn&amp;u=http%3A%2F%2Fwww.baidu.com%2f%3fbdorz_come%3d1 name=tj_login class=lb>登录</a> </noscript> <script>document.write('<a href="http://www.baidu.com/bdorz/login.gif?login&tpl=mn&u='+ encodeURIComponent(window.location.href+ (window.location.search === "" ? "?" : "&")+ "bdorz_come=1")+ '" name="tj_login" class="lb">登录</a>');
+                </script> <a href=//www.baidu.com/more/ name=tj_briicon class=bri style="display: block;">更多产品</a> </div> </div> </div> <div id=ftCon> <div id=ftConw> <p id=lh> <a href=http://home.baidu.com>关于百度</a> <a href=http://ir.baidu.com>About Baidu</a> </p> <p id=cp>&copy;2017&nbsp;Baidu&nbsp;<a href=http://www.baidu.com/duty/>使用百度前必读</a>&nbsp; <a href=http://jianyi.baidu.com/ class=cp-feedback>意见反馈</a>&nbsp;京ICP证030173号&nbsp; <img src=//www.baidu.com/img/gs.gif> </p> </div> </div> </div> </body> </html>
+
+2020-11-19 14:54:31,920 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":[{"result":[{"goods_name":"李子柒柳州螺蛳粉广西特产正宗螺蛳粉方便速食米线 335g*5包","specsName":"默认","goodsDetails":"http://10.0.1.184/#/?goodsId=100010851435&userId=6928&specsId=91221&areaIdPath=","goods_specsId":91221,"goodsMainImgurl":"https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/upload/2020/07/5f2b05653ca6923bc2998ef80f14ecd9.jpg","goods_id":100010851435,"goods_deal_price":"69.00","finalpayEndDate":"","finalpayStartDate":"","order_status":"2","specsType":"0","companyId":"110","goods_number":1,"lable":"","vcardConfId":""}],"original_price":"69.0","payType":"YouDianBi","orderId":"202011171718587220","createTime":"2020-11-17","freight":"0.00","goodsNumber":1,"id":82869,"pay_money":"69.00","status":"2"}]}
+2020-11-19 15:09:52,444 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":{"appVersion":"","fingerprintPay":"0","appToken":"bb27fb98-7d6b-43be-bb50-c112efb0894d","sex":"2","areaPathName":"北京朝阳区三环以内哇","bindWX":"1","bindPhone":"1","longInType":"1","equipment":"","bindQQ":"0","currentIdentity":2,"companyId":110,"areaId":24047,"areaIdPath":"1_72_2799_0","phone":"13140190582","headportrait":"https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/appUser/portrait/2020-08-03/20200803163736.jpeg","nickname":"13140190582","id":6928,"loginIdentity":"2","payPassword":"1","userBirthday":"1997-06-08","username":""}}
+2020-11-19 15:21:26,956 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":{"appVersion":"","fingerprintPay":"0","appToken":"8d9340d0-d398-4041-a86c-707bad0b7df9","sex":"2","areaPathName":"北京朝阳区三环以内哇","bindWX":"1","bindPhone":"1","longInType":"1","equipment":"","bindQQ":"0","currentIdentity":2,"companyId":110,"areaId":24047,"areaIdPath":"1_72_2799_0","phone":"13140190582","headportrait":"https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/appUser/portrait/2020-08-03/20200803163736.jpeg","nickname":"13140190582","id":6928,"loginIdentity":"2","payPassword":"1","userBirthday":"1997-06-08","username":""}}
+2020-11-19 15:21:27,145 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":[]}
+2020-11-19 15:22:01,290 - framework - DEBUG - {"retcode":"1806","retmsg":"验证码错误","data":{}}
+2020-11-19 15:22:31,747 - framework - DEBUG - {"retcode":"1806","retmsg":"验证码错误","data":{}}
+2020-11-19 15:23:23,783 - framework - DEBUG - {"retcode":"1806","retmsg":"验证码错误","data":{}}
+2020-11-19 15:23:41,883 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":{"appVersion":"","fingerprintPay":"0","appToken":"037b1a45-eec0-46e6-ae6b-f0c9613a1e8f","sex":"2","areaPathName":"北京朝阳区三环以内哇","bindWX":"1","bindPhone":"1","longInType":"1","equipment":"","bindQQ":"0","currentIdentity":2,"companyId":110,"areaId":24047,"areaIdPath":"1_72_2799_0","phone":"13140190582","headportrait":"https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/appUser/portrait/2020-08-03/20200803163736.jpeg","nickname":"13140190582","id":6928,"loginIdentity":"2","payPassword":"1","userBirthday":"1997-06-08","username":""}}
+2020-11-19 15:23:42,106 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":[{"userAddress":"哇","lastApply":"","isDefault":"1","areaIdPath":"1_72_2799_0","areaPathName":"北京朝阳区三环以内","userPhone":"13111111111","userName":"邱","userId":6928,"addressId":24047}]}
+2020-11-19 15:30:32,355 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":{"appVersion":"","fingerprintPay":"0","appToken":"12594917-1732-45d6-899e-756b2533a25a","sex":"2","areaPathName":"北京朝阳区三环以内哇","bindWX":"1","bindPhone":"1","longInType":"1","equipment":"","bindQQ":"0","currentIdentity":2,"companyId":110,"areaId":24047,"areaIdPath":"1_72_2799_0","phone":"13140190582","headportrait":"https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/appUser/portrait/2020-08-03/20200803163736.jpeg","nickname":"13140190582","id":6928,"loginIdentity":"2","payPassword":"1","userBirthday":"1997-06-08","username":""}}
+2020-11-19 15:32:32,608 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":{"appVersion":"","fingerprintPay":"0","appToken":"6b66f88c-cd32-486e-992d-aad2558979e8","sex":"2","areaPathName":"北京朝阳区三环以内哇","bindWX":"1","bindPhone":"1","longInType":"1","equipment":"","bindQQ":"0","currentIdentity":2,"companyId":110,"areaId":24047,"areaIdPath":"1_72_2799_0","phone":"13140190582","headportrait":"https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/appUser/portrait/2020-08-03/20200803163736.jpeg","nickname":"13140190582","id":6928,"loginIdentity":"2","payPassword":"1","userBirthday":"1997-06-08","username":""}}
+2020-11-19 15:33:28,483 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":{"appVersion":"","fingerprintPay":"0","appToken":"98b88645-cb26-4cf2-9bf0-b8adc84beb5d","sex":"2","areaPathName":"北京朝阳区三环以内哇","bindWX":"1","bindPhone":"1","longInType":"1","equipment":"","bindQQ":"0","currentIdentity":2,"companyId":110,"areaId":24047,"areaIdPath":"1_72_2799_0","phone":"13140190582","headportrait":"https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/appUser/portrait/2020-08-03/20200803163736.jpeg","nickname":"13140190582","id":6928,"loginIdentity":"2","payPassword":"1","userBirthday":"1997-06-08","username":""}}
+2020-11-19 15:34:26,189 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":{"appVersion":"","fingerprintPay":"0","appToken":"3a1331b0-b9a4-4d05-a292-df1a8ecb9d43","sex":"2","areaPathName":"北京朝阳区三环以内哇","bindWX":"1","bindPhone":"1","longInType":"1","equipment":"","bindQQ":"0","currentIdentity":2,"companyId":110,"areaId":24047,"areaIdPath":"1_72_2799_0","phone":"13140190582","headportrait":"https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/appUser/portrait/2020-08-03/20200803163736.jpeg","nickname":"13140190582","id":6928,"loginIdentity":"2","payPassword":"1","userBirthday":"1997-06-08","username":""}}
+2020-11-19 15:35:18,662 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":{"appVersion":"","fingerprintPay":"0","appToken":"363ede36-3f2c-4988-b603-1007ef1d82eb","sex":"2","areaPathName":"北京朝阳区三环以内哇","bindWX":"1","bindPhone":"1","longInType":"1","equipment":"","bindQQ":"0","currentIdentity":2,"companyId":110,"areaId":24047,"areaIdPath":"1_72_2799_0","phone":"13140190582","headportrait":"https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/appUser/portrait/2020-08-03/20200803163736.jpeg","nickname":"13140190582","id":6928,"loginIdentity":"2","payPassword":"1","userBirthday":"1997-06-08","username":""}}
+2020-11-19 15:35:22,883 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":{"appVersion":"","fingerprintPay":"0","appToken":"feb2716d-c3fc-46e6-8bfa-12e0eefeb7a2","sex":"2","areaPathName":"北京朝阳区三环以内哇","bindWX":"1","bindPhone":"1","longInType":"1","equipment":"","bindQQ":"0","currentIdentity":2,"companyId":110,"areaId":24047,"areaIdPath":"1_72_2799_0","phone":"13140190582","headportrait":"https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/appUser/portrait/2020-08-03/20200803163736.jpeg","nickname":"13140190582","id":6928,"loginIdentity":"2","payPassword":"1","userBirthday":"1997-06-08","username":""}}
+2020-11-19 15:37:59,885 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":{"appVersion":"","fingerprintPay":"0","appToken":"9ebca335-124f-4b8c-a730-7fb8a224b305","sex":"2","areaPathName":"北京朝阳区三环以内呃呃呃呃","bindWX":"1","bindPhone":"1","longInType":"1","equipment":"","bindQQ":"0","currentIdentity":2,"companyId":110,"areaId":24050,"areaIdPath":"1_72_2799_0","phone":"13140190582","headportrait":"https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/appUser/portrait/2020-08-03/20200803163736.jpeg","nickname":"13140190582","id":6928,"loginIdentity":"2","payPassword":"1","userBirthday":"1997-06-08","username":""}}
+2020-11-19 15:38:00,273 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":[{"userAddress":"呃呃呃呃","lastApply":"100000","isDefault":"1","areaIdPath":"1_72_2799_0","areaPathName":"北京朝阳区三环以内","userPhone":"13140190522","userName":"秋","userId":6928,"addressId":24050},{"userAddress":"哇","lastApply":"","isDefault":"0","areaIdPath":"1_72_2799_0","areaPathName":"北京朝阳区三环以内","userPhone":"13111111111","userName":"邱","userId":6928,"addressId":24047}]}
+2020-11-19 15:39:15,643 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":{"appVersion":"","fingerprintPay":"0","appToken":"716f0724-63de-4a81-9b5a-9859770ae452","sex":"2","areaPathName":"北京朝阳区三环以内呃呃呃呃","bindWX":"1","bindPhone":"1","longInType":"1","equipment":"","bindQQ":"0","currentIdentity":2,"companyId":110,"areaId":24050,"areaIdPath":"1_72_2799_0","phone":"13140190582","headportrait":"https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/appUser/portrait/2020-08-03/20200803163736.jpeg","nickname":"13140190582","id":6928,"loginIdentity":"2","payPassword":"1","userBirthday":"1997-06-08","username":""}}
+2020-11-19 15:42:59,349 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":{"appVersion":"","fingerprintPay":"0","appToken":"b3db805a-ed58-465f-9b44-8adf310823b1","sex":"2","areaPathName":"北京朝阳区三环以内呃呃呃呃","bindWX":"1","bindPhone":"1","longInType":"1","equipment":"","bindQQ":"0","currentIdentity":2,"companyId":110,"areaId":24050,"areaIdPath":"1_72_2799_0","phone":"13140190582","headportrait":"https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/appUser/portrait/2020-08-03/20200803163736.jpeg","nickname":"13140190582","id":6928,"loginIdentity":"2","payPassword":"1","userBirthday":"1997-06-08","username":""}}
+2020-11-19 15:44:02,748 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":{"appVersion":"","fingerprintPay":"0","appToken":"dda6f488-022b-4782-bdb6-83c977842462","sex":"2","areaPathName":"北京朝阳区三环以内呃呃呃呃","bindWX":"1","bindPhone":"1","longInType":"1","equipment":"","bindQQ":"0","currentIdentity":2,"companyId":110,"areaId":24050,"areaIdPath":"1_72_2799_0","phone":"13140190582","headportrait":"https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/appUser/portrait/2020-08-03/20200803163736.jpeg","nickname":"13140190582","id":6928,"loginIdentity":"2","payPassword":"1","userBirthday":"1997-06-08","username":""}}
+2020-11-19 15:44:17,940 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":{"appVersion":"","fingerprintPay":"0","appToken":"91a1febc-ad55-4613-86f6-f7be9f986b25","sex":"2","areaPathName":"北京朝阳区三环以内呃呃呃呃","bindWX":"1","bindPhone":"1","longInType":"1","equipment":"","bindQQ":"0","currentIdentity":2,"companyId":110,"areaId":24050,"areaIdPath":"1_72_2799_0","phone":"13140190582","headportrait":"https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/appUser/portrait/2020-08-03/20200803163736.jpeg","nickname":"13140190582","id":6928,"loginIdentity":"2","payPassword":"1","userBirthday":"1997-06-08","username":""}}
+2020-11-19 15:44:24,138 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":{"appVersion":"","fingerprintPay":"0","appToken":"c01fca3e-eac4-4a3c-803a-7e84b7c8cf7e","sex":"2","areaPathName":"北京朝阳区三环以内呃呃呃呃","bindWX":"1","bindPhone":"1","longInType":"1","equipment":"","bindQQ":"0","currentIdentity":2,"companyId":110,"areaId":24050,"areaIdPath":"1_72_2799_0","phone":"13140190582","headportrait":"https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/appUser/portrait/2020-08-03/20200803163736.jpeg","nickname":"13140190582","id":6928,"loginIdentity":"2","payPassword":"1","userBirthday":"1997-06-08","username":""}}
+2020-11-19 15:44:37,286 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":{"appVersion":"","fingerprintPay":"0","appToken":"b4bb65d9-91d0-4eb1-a3ea-beb8e148b6b3","sex":"2","areaPathName":"北京朝阳区三环以内呃呃呃呃","bindWX":"1","bindPhone":"1","longInType":"1","equipment":"","bindQQ":"0","currentIdentity":2,"companyId":110,"areaId":24050,"areaIdPath":"1_72_2799_0","phone":"13140190582","headportrait":"https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/appUser/portrait/2020-08-03/20200803163736.jpeg","nickname":"13140190582","id":6928,"loginIdentity":"2","payPassword":"1","userBirthday":"1997-06-08","username":""}}
+2020-11-19 15:45:14,035 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":{"appVersion":"","fingerprintPay":"0","appToken":"22d23506-4524-4429-a0f8-65a08bcd9261","sex":"2","areaPathName":"北京朝阳区三环以内呃呃呃呃","bindWX":"1","bindPhone":"1","longInType":"1","equipment":"","bindQQ":"0","currentIdentity":2,"companyId":110,"areaId":24050,"areaIdPath":"1_72_2799_0","phone":"13140190582","headportrait":"https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/appUser/portrait/2020-08-03/20200803163736.jpeg","nickname":"13140190582","id":6928,"loginIdentity":"2","payPassword":"1","userBirthday":"1997-06-08","username":""}}
+2020-11-19 15:45:15,223 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":{"appVersion":"","fingerprintPay":"0","appToken":"ce85b4ec-a8cd-4497-a4ab-c16df64a68ea","sex":"2","areaPathName":"北京朝阳区三环以内呃呃呃呃","bindWX":"1","bindPhone":"1","longInType":"1","equipment":"","bindQQ":"0","currentIdentity":2,"companyId":110,"areaId":24050,"areaIdPath":"1_72_2799_0","phone":"13140190582","headportrait":"https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/appUser/portrait/2020-08-03/20200803163736.jpeg","nickname":"13140190582","id":6928,"loginIdentity":"2","payPassword":"1","userBirthday":"1997-06-08","username":""}}
+2020-11-19 15:45:15,579 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":[{"result":[{"goods_name":"李子柒柳州螺蛳粉广西特产正宗螺蛳粉方便速食米线 335g*5包","specsName":"默认","goodsDetails":"http://10.0.1.184/#/?goodsId=100010851435&userId=6928&specsId=91221&areaIdPath=","goods_specsId":91221,"goodsMainImgurl":"https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/upload/2020/07/5f2b05653ca6923bc2998ef80f14ecd9.jpg","goods_id":100010851435,"goods_deal_price":"69.00","finalpayEndDate":"","finalpayStartDate":"","order_status":"2","specsType":"0","companyId":"110","goods_number":1,"lable":"","vcardConfId":""}],"original_price":"69.0","payType":"YouDianBi","orderId":"202011171718587220","createTime":"2020-11-17","freight":"0.00","goodsNumber":1,"id":82869,"pay_money":"69.00","status":"2"}]}
+2020-11-19 15:45:16,071 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":{"appVersion":"","fingerprintPay":"0","appToken":"8179b4d2-1fe1-486c-a601-054b2006357e","sex":"2","areaPathName":"北京朝阳区三环以内呃呃呃呃","bindWX":"1","bindPhone":"1","longInType":"1","equipment":"","bindQQ":"0","currentIdentity":2,"companyId":110,"areaId":24050,"areaIdPath":"1_72_2799_0","phone":"13140190582","headportrait":"https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/appUser/portrait/2020-08-03/20200803163736.jpeg","nickname":"13140190582","id":6928,"loginIdentity":"2","payPassword":"1","userBirthday":"1997-06-08","username":""}}
+2020-11-19 15:45:16,360 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":[{"userAddress":"呃呃呃呃","lastApply":"100000","isDefault":"1","areaIdPath":"1_72_2799_0","areaPathName":"北京朝阳区三环以内","userPhone":"13140190522","userName":"秋","userId":6928,"addressId":24050},{"userAddress":"哇","lastApply":"","isDefault":"0","areaIdPath":"1_72_2799_0","areaPathName":"北京朝阳区三环以内","userPhone":"13111111111","userName":"邱","userId":6928,"addressId":24047}]}
+2020-11-19 15:45:17,073 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":{"appVersion":"","fingerprintPay":"0","appToken":"c2bae4f8-2293-4c01-9b49-87ab839514f1","sex":"2","areaPathName":"北京朝阳区三环以内呃呃呃呃","bindWX":"1","bindPhone":"1","longInType":"1","equipment":"","bindQQ":"0","currentIdentity":2,"companyId":110,"areaId":24050,"areaIdPath":"1_72_2799_0","phone":"13140190582","headportrait":"https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/appUser/portrait/2020-08-03/20200803163736.jpeg","nickname":"13140190582","id":6928,"loginIdentity":"2","payPassword":"1","userBirthday":"1997-06-08","username":""}}
+2020-11-19 15:46:54,631 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":{"appVersion":"","fingerprintPay":"0","appToken":"fa3bed68-0c0c-473a-996e-818a7caf4e24","sex":"2","areaPathName":"北京朝阳区三环以内呃呃呃呃","bindWX":"1","bindPhone":"1","longInType":"1","equipment":"","bindQQ":"0","currentIdentity":2,"companyId":110,"areaId":24050,"areaIdPath":"1_72_2799_0","phone":"13140190582","headportrait":"https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/appUser/portrait/2020-08-03/20200803163736.jpeg","nickname":"13140190582","id":6928,"loginIdentity":"2","payPassword":"1","userBirthday":"1997-06-08","username":""}}
+2020-11-19 15:49:02,735 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":{"appVersion":"","fingerprintPay":"0","appToken":"71dd04c5-9af0-411b-9281-ccff233736d9","sex":"2","areaPathName":"北京朝阳区三环以内呃呃呃呃","bindWX":"1","bindPhone":"1","longInType":"1","equipment":"","bindQQ":"0","currentIdentity":2,"companyId":110,"areaId":24050,"areaIdPath":"1_72_2799_0","phone":"13140190582","headportrait":"https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/appUser/portrait/2020-08-03/20200803163736.jpeg","nickname":"13140190582","id":6928,"loginIdentity":"2","payPassword":"1","userBirthday":"1997-06-08","username":""}}
+2020-11-19 15:49:03,435 - framework - DEBUG - {"retcode":"200","retmsg":"成功","data":{"params":{},"addressid":24051,"userid":6928,"username":"queens","userphone":"13143980894","areaidpath":"1_72_2799_0","areapathname":"北京朝阳区三环以内","useraddress":"wwawa","zipcode":"100000","isdefault":"1","delFlag":"1","lastApplyTime":1605772143299}}

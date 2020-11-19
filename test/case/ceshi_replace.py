@@ -17,8 +17,6 @@ class UntitledTestCase(unittest.TestCase):
         self.driver.get('http://10.0.1.183/youjia-admin/login')
         driver = self.driver
 
-
-
     def test_untitled_test_case(self):
         self.driver.find_element_by_name("username").clear()  # 用户名正确，密码正确
         self.driver.find_element_by_name("username").send_keys("admin")
@@ -32,10 +30,6 @@ class UntitledTestCase(unittest.TestCase):
         cookie = self.driver.get_cookies()
         print(cookie)
         driver = self.driver
-        # driver.add_cookie({'name': 'JSESSIONID', 'value': '087556d1-10a0-47bf-9711-0348d1028b62'})
-        # driver.add_cookie({'name': 'Hm_lvt_9bd56a6d0766b887592ee921aa94763f',
-        #                    'value': '1600653214,1600916935,1602579523'})
-        # driver.add_cookie({'name': 'Hm_lpvt_9bd56a6d0766b887592ee921aa94763f', 'value': '1602809960'})
         time.sleep(3)
         driver.implicitly_wait(10)  # 隐式等待时间
         driver.switch_to.window(self.driver.window_handles[-1])  # 切换到该窗口
@@ -50,20 +44,21 @@ class UntitledTestCase(unittest.TestCase):
         driver.implicitly_wait(10)
         driver.switch_to.frame(driver.find_element_by_xpath('//*[@id="content-main"]/iframe[2]'))  # 定位商品管理框架
         time.sleep(3)
-        driver.find_element_by_xpath('//*[@id="formId"]/div/ul/li[1]/input').send_keys('100010851550')
-        driver.find_element_by_xpath('//*[@id="formId"]/div/ul/li[10]/a[1]').click()
+        driver.find_element_by_xpath('//*[@id="bootstrap-table"]/tbody/tr[1]/td[1]/input').click()
         time.sleep(3)
-        driver.find_element_by_xpath('//*[@id="toolbar"]/a[1]').click()
+        driver.find_element_by_xpath('//*[@id="toolbar"]/a[2]').click()
+
+        driver.switch_to.frame(driver.find_element_by_xpath('//*[@id="content-main"]/iframe[5]'))
         driver.switch_to_default_content()  # 释放iframe
         driver.implicitly_wait(10)
-        driver.switch_to.frame(driver.find_element_by_xpath('//*[@id="content-main"]/iframe[3]'))  #定位到添加商品框架
+        driver.switch_to.frame(driver.find_element_by_xpath('//*[@id="content-main"]/iframe[3]'))
+        driver.find_element_by_xpath('//*[@id="form-user-add"]/div[1]/div/div/div/input').clear()
         time.sleep(3)
-        driver.find_element_by_name('goodsName').send_keys('苹果')
-        
+        driver.find_element_by_xpath('//*[@id="form-user-add"]/div[1]/div/div/div/input').send_keys('哇哈哈')
+        driver.find_element_by_xpath('/html/body/div[1]/div/div/button[1]').click()
+        driver.implicitly_wait(10)
+        driver.switch_to.parent_frame()  # 从子frame切回到父frame
         time.sleep(3)
-
-
-
 
     def tearDown(self):
         self.driver.quit()
