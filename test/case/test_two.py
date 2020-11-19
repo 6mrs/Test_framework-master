@@ -63,6 +63,7 @@ class UntitledTestCase(unittest.TestCase):
         # b = "http://10.0.1.183/youjia-admin/index"
         # self.assertEqual(a, b, '登录失败')
 
+
     def tearDown(self):
         time.sleep(2)
         print('自动测试完毕！')
