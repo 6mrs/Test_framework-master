@@ -194,9 +194,9 @@ function showOutput(id, name) {
 
 <div class='page-header'>
 <h1>自动化测试报告</h1>
-<p class='attribute'><strong>开始时间:</strong> 2020-11-25 14:15:44</p>
-<p class='attribute'><strong>运行时长:</strong> 0:00:00.916043</p>
-<p class='attribute'><strong>状态:</strong> 通过 8 失败 2</p>
+<p class='attribute'><strong>开始时间:</strong> 2020-11-26 17:52:27</p>
+<p class='attribute'><strong>运行时长:</strong> 0:00:23.243532</p>
+<p class='attribute'><strong>状态:</strong> 通过 5</p>
 
 </div>
 <p class='description'>自动化测试执行的详细信息</p>
@@ -227,35 +227,33 @@ function showOutput(id, name) {
     <td>查看</td>
 </tr>
 
-<tr class='failClass'>
-    <td>address.yizhi_login.TestInterface</td>
-    <td>4</td>
-    <td>3</td>
-    <td>1</td>
+<tr class='passClass'>
+    <td>interface_test1.TestInterface</td>
+    <td>5</td>
+    <td>5</td>
     <td>0</td>
-    <td><a href="javascript:showClassDetail('c1',4)">详情</a></td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',5)">详情</a></td>
 </tr>
 
-<tr id='ft1.1' class='none'>
-    <td class='failCase'><div class='testcase'>test_getMsg</div></td>
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_2_findUserAddress</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
-        失败</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        通过</a>
 
-    <div id='div_ft1.1' class="popup_window">
+    <div id='div_pt1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft1.1: {'code': 0, 'msg': '执行成功'}
-Traceback (most recent call last):
-  File "/Users/youjia/Desktop/Test_framework-master/test/interface/address/yizhi_login.py", line 32, in test_getMsg
-    self.assertEqual(result['code'], '0')
-AssertionError: 0 != '0'
+pt1.1: headers信息：... {'Content-Type': 'application/Json', 'appToken': 'd59f6733-c362-4f56-88f5-383d63deeb42'}
+请求地址：....... http://10.0.1.184/boot/app/address/findUserAddress
+返回数据为：..... {'retcode': '200', 'retmsg': '成功', 'data': [{'userAddress': 'wwawa', 'lastApply': '100000', 'isDefault': '1', 'areaIdPath': '1_72_2799_0', 'areaPathName': '北京朝阳区三环以内', 'userPhone': '13143980894', 'userName': 'queens', 'userId': 6928, 'addressId': 24056}, {'userAddress': 'wwawa', 'lastApply': '100000', 'isDefault': '0', 'areaIdPath': '1_72_2799_0', 'areaPathName': '北京朝阳区三环以内', 'userPhone': '13143980894', 'userName': 'queens', 'userId': 6928, 'addressId': 24055}, {'userAddress': 'wwawa', 'lastApply': '100000', 'isDefault': '0', 'areaIdPath': '1_72_2799_0', 'areaPathName': '北京朝阳区三环以内', 'userPhone': '13143980894', 'userName': 'queens', 'userId': 6928, 'addressId': 24053}, {'userAddress': '常营地区', 'lastApply': '', 'isDefault': '0', 'areaIdPath': '1_72_2799_0', 'areaPathName': '北京朝阳区三环以内', 'userPhone': '13140190592', 'userName': 'qiuiu', 'userId': 6928, 'addressId': 24052}, {'userAddress': 'wwawa', 'lastApply': '100000', 'isDefault': '0', 'areaIdPath': '1_72_2799_0', 'areaPathName': '北京朝阳区三环以内', 'userPhone': '13143980894', 'userName': 'queens', 'userId': 6928, 'addressId': 24051}, {'userAddress': '哇', 'lastApply': '', 'isDefault': '0', 'areaIdPath': '1_72_2799_0', 'areaPathName': '北京朝阳区三环以内', 'userPhone': '13111111111', 'userName': '邱', 'userId': 6928, 'addressId': 24047}]}
 
 
         </pre>
@@ -266,7 +264,7 @@ AssertionError: 0 != '0'
 </tr>
 
 <tr id='pt1.2' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_getSms</div></td>
+    <td class='none'><div class='testcase'>test_addUserAddress</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -280,7 +278,9 @@ AssertionError: 0 != '0'
         </div>
         <pre>
         
-pt1.2: {'code': -1, 'msg': 'phone不能为空'}
+pt1.2: headers信息：... {'Content-Type': 'application/Json', 'appToken': 'd59f6733-c362-4f56-88f5-383d63deeb42'}
+请求地址：....... http://10.0.1.184/boot/app/address/addUserAddress
+返回数据为：..... {'retcode': '200', 'retmsg': '成功', 'data': {'params': {}, 'addressid': 24057, 'userid': 6928, 'username': 'queens', 'userphone': '13143980894', 'areaidpath': '1_72_2799_0', 'areapathname': '北京朝阳区三环以内', 'useraddress': 'wwawa', 'zipcode': '100000', 'isdefault': '1', 'delFlag': '1', 'lastApplyTime': 1606384356794}}
 
 
         </pre>
@@ -291,12 +291,34 @@ pt1.2: {'code': -1, 'msg': 'phone不能为空'}
 </tr>
 
 <tr id='pt1.3' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_login</div></td>
-    <td colspan='5' align='center'>通过</td>
+    <td class='none'><div class='testcase'>test_findOrderList</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
+        通过</a>
+
+    <div id='div_pt1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.3: headers信息：... {'Content-Type': 'application/Json', 'appToken': 'd59f6733-c362-4f56-88f5-383d63deeb42'}
+请求地址：....... http://10.0.1.184/boot/app/order/findOrderList
+返回数据为：..... {'retcode': '200', 'retmsg': '成功', 'data': []}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
 </tr>
 
 <tr id='pt1.4' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_updateMsy</div></td>
+    <td class='none'><div class='testcase'>test_removeUserAddress</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -310,7 +332,9 @@ pt1.2: {'code': -1, 'msg': 'phone不能为空'}
         </div>
         <pre>
         
-pt1.4: {'code': 0, 'data': {'name': '', 'phone': '', 'sex': 2, 'avator': '', 'linkAddr': '', 'pwd': '', 'sign': '', 'deptId': ''}, 'msg': '执行成功'}
+pt1.4: headers信息：... {'Content-Type': 'application/Json', 'appToken': 'd59f6733-c362-4f56-88f5-383d63deeb42'}
+请求地址：....... http://10.0.1.184/boot/app/address/removeUserAddress
+返回数据为：..... {'retcode': '200', 'retmsg': '成功', 'data': {}}
 
 
         </pre>
@@ -320,140 +344,24 @@ pt1.4: {'code': 0, 'data': {'name': '', 'phone': '', 'sex': 2, 'avator': '', 'li
     </td>
 </tr>
 
-<tr class='failClass'>
-    <td>address.yizhi_one.TestInterface</td>
-    <td>6</td>
-    <td>5</td>
-    <td>1</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c2',6)">详情</a></td>
-</tr>
-
-<tr id='pt2.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_addUserAddress</div></td>
+<tr id='pt1.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_updateUserAddress</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.5')" >
         通过</a>
 
-    <div id='div_pt2.1' class="popup_window">
+    <div id='div_pt1.5' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.5').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt2.1: {"code":0,"data":{"areaVO":{"province":2,"city":1,"county":2,"town":2},"areaAddr":"北京朝阳区","detailAddr":"常营天街","signPhone":"13140190582","signName":"秋分姐姐","isDefault":0,"remark":""},"msg":"执行成功"}
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt2.2' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_getAddress</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.2')" >
-        通过</a>
-
-    <div id='div_pt2.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.2').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt2.2: {"code":0,"data":{"id":2764905559492803585,"areaVO":{"province":0,"city":0,"county":0,"town":0},"areaAddr":"北京朝阳四环街道","detailAddr":"哇哈哈街区","signPhone":"131243","signName":"哇哈哈","isDefault":0,"remark":""},"msg":"执行成功"}
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='ft2.3' class='none'>
-    <td class='failCase'><div class='testcase'>test_getMsg</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.3')" >
-        失败</a>
-
-    <div id='div_ft2.3' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.3').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft2.3: {'code': 0, 'msg': '执行成功'}
-Traceback (most recent call last):
-  File "/Users/youjia/Desktop/Test_framework-master/test/interface/address/yizhi_one.py", line 34, in test_getMsg
-    self.assertEqual(result['code'], '0')
-AssertionError: 0 != '0'
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt2.4' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_getSms</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.4')" >
-        通过</a>
-
-    <div id='div_pt2.4' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.4').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt2.4: {'code': -1, 'msg': 'phone不能为空'}
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt2.5' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_login</div></td>
-    <td colspan='5' align='center'>通过</td>
-</tr>
-
-<tr id='pt2.6' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_updateMsy</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.6')" >
-        通过</a>
-
-    <div id='div_pt2.6' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.6').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt2.6: {'code': 0, 'data': {'name': '', 'phone': '', 'sex': 2, 'avator': '', 'linkAddr': '', 'pwd': '', 'sign': '', 'deptId': ''}, 'msg': '执行成功'}
+pt1.5: headers信息：... {'Content-Type': 'application/Json', 'appToken': 'd59f6733-c362-4f56-88f5-383d63deeb42'}
+请求地址：....... http://10.0.1.184/boot/app/address/updateUserAddress
+返回数据为：..... {'retcode': '200', 'retmsg': '成功', 'data': {'params': {}, 'addressid': '', 'userid': 6928, 'username': '清清浅浅', 'userphone': '13143980894', 'areaidpath': '1_72_2799_0', 'areapathname': '北京朝阳区三环以内', 'useraddress': 'wwawa', 'zipcode': '100000', 'isdefault': '1', 'delFlag': '', 'lastApplyTime': 1606384368387}}
 
 
         </pre>
@@ -465,9 +373,9 @@ pt2.6: {'code': 0, 'data': {'name': '', 'phone': '', 'sex': 2, 'avator': '', 'li
 
 <tr id='total_row'>
     <td>总计</td>
-    <td>10</td>
-    <td>8</td>
-    <td>2</td>
+    <td>5</td>
+    <td>5</td>
+    <td>0</td>
     <td>0</td>
     <td>&nbsp;</td>
 </tr>

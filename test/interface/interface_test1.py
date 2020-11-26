@@ -1,10 +1,9 @@
 import unittest
 
-import fp as fp
 import requests
 import json
-from utils.HTMLTestRunner import HTMLTestRunner
-from utils.config import REPORT_PATH
+
+from test.common.get_token import get_token
 from utils.log import logger
 
 
@@ -16,31 +15,40 @@ class TestInterface(unittest.TestCase):
         self.base4_url = 'http://10.0.1.184/boot/app/address/addUserAddress'
         self.base5_url = 'http://10.0.1.184/boot/app/address/updateUserAddress'
         self.base6_url = 'http://10.0.1.184/boot/app/address/removeUserAddress'
+        self.t = globals()
 
-    def test_login(self):  # 登录获取token
-        data = {"phone": "13140190582", "shortMsgCode": "102938", "type": "1"}  # 定义传参数据
-        head = {"Content-Type": "application/Json"}  # 定义头部
-        r = requests.post(self.base_url, params=data, headers=head)  # 传入参数
-        result = json.loads(r.text)  # 使用json格式返回
-        self.assertIn('retmsg', r.text)  # 检验返回值
-        logger.debug(r.text)
-        return r.json()['data']['appToken']
 
-    def test_findUserAddress(self):  # 查看收货地址
-        head = {"Content-Type": "application/Json", 'appToken': self.test_login()}
+
+    # def test_1_login(self):  # 登录获取token
+    #     data = {"phone": "13140190582", "shortMsgCode": "102938", "type": "1"}  # 定义传参数据
+    #     head = {"Content-Type": "application/Json"}  # 定义头部
+    #     r = requests.post(self.base_url, params=data, headers=head)  # 传入参数
+    #     result = json.loads(r.text)  # 使用json格式返回
+    #     self.assertIn('retmsg', r.text)  # 检验返回值
+    #     logger.debug(r.text)
+    #     self.t['token'] = r.json()['data']['appToken']
+    #     return r.json()['data']['appToken']
+
+    def test_2_findUserAddress(self):  # 查看收货地址
+        head = {"Content-Type": "application/Json", 'appToken': get_token()}
         r = requests.post(self.base2_url, headers=head)
         result = json.loads(r.text)  # 使用json格式返回
-        print(result)
+        print("headers信息：...", head)
+        print("请求地址：.......", self.base2_url)
+        print("返回数据为：.....", result)
+        self.t['address'] = r.json()['data'][0]['addressId']
         self.assertIn('retmsg', r.text)  # 断言
         self.assertEqual(result['retcode'], '200')
         logger.debug(r.text)
 
     def test_findOrderList(self):  # 订单查询  订单状态 全部：100 1：待支付，2:待发货，3:待收货，4：待评价 5：已完成 0：已取消
         data = {'time': '1', 'type': '2', 'page': '0', 'size': '10'}  # 定义传参数据
-        head = {"Content-Type": "application/Json", 'appToken': self.test_login()}
+        head = {"Content-Type": "application/Json", 'appToken': get_token()}
         r = requests.post(self.base3_url, params=data, headers=head)
         result = json.loads(r.text)  # 使用json格式返回
-        print(result)
+        print("headers信息：...", head)
+        print("请求地址：.......", self.base3_url)
+        print("返回数据为：.....", result)
         self.assertIn('retmsg', r.text)  # 断言
         self.assertEqual(result['retcode'], '200')
         logger.debug(r.text)
@@ -54,10 +62,12 @@ class TestInterface(unittest.TestCase):
                 'zipcode': '100000',
                 'isdefault': '1'}  # 定义传参数据
 
-        head = {"Content-Type": "application/Json", 'appToken': self.test_login()}
+        head = {"Content-Type": "application/Json", 'appToken': get_token()}
         r = requests.post(self.base4_url, params=data, headers=head)
         result = json.loads(r.text)  # 使用json格式返回
-        print(result)
+        print("headers信息：...", head)
+        print("请求地址：.......", self.base4_url)
+        print("返回数据为：.....", result)
         self.assertIn('retmsg', r.text)  # 断言
         self.assertEqual(result['retcode'], '200')
         logger.debug(r.text)
@@ -71,21 +81,25 @@ class TestInterface(unittest.TestCase):
                 'zipcode': '100000',
                 'isdefault': '1'}  # 定义传参数据
 
-        head = {"Content-Type": "application/Json", 'appToken': self.test_login()}
+        head = {"Content-Type": "application/Json", 'appToken': get_token()}
         r = requests.post(self.base5_url, params=data, headers=head)
         result = json.loads(r.text)  # 使用json格式返回
-        print(result)
+        print("headers信息：...", head)
+        print("请求地址：.......", self.base5_url)
+        print("返回数据为：.....", result)
         self.assertIn('retmsg', r.text)  # 断言
         self.assertEqual(result['retcode'], '200')
         logger.debug(r.text)
 
     def test_removeUserAddress(self):  # 删除收货地址
-        data = {'userAddressId': '24050'}
+        data = {"userAddressId": self.t['address']}
 
-        head = {"Content-Type": "application/Json", 'appToken': self.test_login()}
+        head = {"Content-Type": "application/Json", 'appToken': get_token()}
         r = requests.post(self.base6_url, params=data, headers=head)
         result = json.loads(r.text)  # 使用json格式返回
-        print(result)
+        print("headers信息：...", head)
+        print("请求地址：.......", self.base6_url)
+        print("返回数据为：.....", result)
         self.assertIn('retmsg', r.text)  # 断言
         self.assertEqual(result['retcode'], '200')
         logger.debug(r.text)
