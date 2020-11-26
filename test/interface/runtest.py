@@ -9,7 +9,7 @@ from utils.config import REPORT_PATH
 def allTest():
     suite = unittest.TestLoader().discover(   # suite = unittest.TestSuite()   suite.addTest(test_baidu.BaiduTest('test_baidu'))
         start_dir=os.path.dirname(__file__),  # 文件地址
-        pattern="interface_test1.py",  # 文件类型
+        pattern="yizhi_*.py",  # 文件类型
         top_level_dir=None)
 
     return suite

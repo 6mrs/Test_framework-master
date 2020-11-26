@@ -1,8 +1,5 @@
-import requests  # 导入requests包
-from bs4 import BeautifulSoup
-
-url = 'http://www.cntour.cn/'
-strhtml = requests.get(url)
-soup = BeautifulSoup(strhtml.text, 'lxml')
-data = soup.select('#main>div>div.mtop.firstMod.clearfix>div.centerBox>ul.newsList>li>a')
-print(data)
+from MyQR import myqr
+myqr.run(words='https://fanyi.baidu.com/translate?aldtype=16047&query=%E4%BD%A0%E6%98%AF%E7%8C%AA%E5%90%A7&keyfrom=baidu&smartresult=dict&lang=auto2zh#zh/en/%E4%BD%A0%E6%98%AF%E7%8C%AA%E5%90%A7',
+         picture='docs/img/pic.jpg',
+         save_name='qr4.png',
+         colorized=True)

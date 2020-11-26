@@ -1,30 +1,80 @@
-import requests
-import random
-url = "https://www.wjx.cn/joinnew/processjq.ashx?submittype=1&curID=21581199&t=1521463484600&starttime=2018%2F3%2F19%2020%3A44%3A30&rn=990598061.78751211" #问卷地址
-data = {
- "submitdata" : "1$%s}2$%s}3$%s}4$%s}5$%s}6$%s}7$%s}8$%s}9$%s}10$%s"
-}
-header = {
- "User-Agent" : "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)",
- "Cookie": ".ASPXANONYMOUS=iBuvxgz20wEkAAAAZGY4MDE1MjctNWU4Ni00MDUwLTgwYjQtMjFhMmZhMDE2MTA3h_bb3gNw4XRPsyh-qPh4XW1mfJ41; spiderregkey=baidu.com%c2%a7%e7%9b%b4%e8%be%be%c2%a71; UM_distinctid=1623e28d4df22d-08d0140291e4d5-102c1709-100200-1623e28d4e1141; _umdata=535523100CBE37C329C8A3EEEEE289B573446F594297CC3BB3C355F09187F5ADCC492EBB07A9CC65CD43AD3E795C914CD57017EE3799E92F0E2762C963EF0912; WjxUser=UserName=17750277425&Type=1; LastCheckUpdateDate=1; LastCheckDesign=1; DeleteQCookie=1; _cnzz_CV4478442=%E7%94%A8%E6%88%B7%E7%89%88%E6%9C%AC%7C%E5%85%8D%E8%B4%B9%E7%89%88%7C1521461468568; jac21581199=78751211; CNZZDATA4478442=cnzz_eid%3D878068609-1521456533-https%253A%252F%252Fwww.baidu.com%252F%26ntime%3D1521461319; Hm_lvt_21be24c80829bd7a683b2c536fcf520b=1521461287,1521463471; Hm_lpvt_21be24c80829bd7a683b2c536fcf520b=1521463471",
- "X-Forwarded-For" : "%s"
-}
-for i in range(0,500):
- choice = (
- random.randint(1, 2),
- random.randint(1, 4),
- random.randint(1, 3),
- random.randint(1, 4),
- random.randint(1, 3),
- random.randint(1, 3),
- random.randint(1, 3),
- random.randint(1, 3),
- random.randint(1, 3),
- random.randint(1, 3),
- )
- data["submitdata"] = data["submitdata"] % choice
- header["X-Forwarded-For"] = (str(random.randint(1,255))+".")+(str(random.randint(1,255))+".")+(str(random.randint(1,255))+".")+str(random.randint(1,255))
- r = requests.post(url = url,headers=header,data=data)
- print(header["X-Forwarded-For"],r.text)
- data["submitdata"] = "1$%s}2$%s}3$%s}4$%s}5$%s}6$%s}7$%s}8$%s}9$%s}10$%s"
- header["X-Forwarded-For"] = "%s"
+import turtle
+import time
+
+#1-2画心形圆弧
+def hart_arc():
+    for i in range(200):
+        turtle.right(1)
+        turtle.forward(2)
+
+
+def move_pen_position(x, y):
+    turtle.hideturtle()  # 隐藏画笔（先）
+    turtle.up()  # 提笔
+    turtle.goto(x, y)  # 移动画笔到指定起始坐标（窗口中心为0,0）
+    turtle.down()  # 下笔
+    turtle.showturtle()  # 显示画笔
+
+
+love = input("请输入表白话语：")
+signature = input("请签署你的名字:")
+date=input("请写上日期：")
+
+if love == '':
+    love = 'I Love You'
+
+#1-3初始化
+turtle.setup(width=800, height=600)  # 窗口（画布）大小
+turtle.color('red', 'pink')  # 画笔颜色
+turtle.pensize(3)  # 画笔粗细
+turtle.speed(10)  # 描绘速度
+# 初始化画笔起始坐标
+move_pen_position(x=0, y=-180)  # 移动画笔位置w
+turtle.left(140)  # 向左旋转140度
+
+turtle.begin_fill()  # 标记背景填充位置
+
+#1-4画图和展示
+turtle.forward(224)  # 向前移动画笔，长度为224
+# 画爱心圆弧
+hart_arc()  # 左侧圆弧
+turtle.left(120)  # 调整画笔角度
+hart_arc()  # 右侧圆弧
+# 画心形直线（ 右下方 ）
+turtle.forward(224)
+
+turtle.end_fill()  # 标记背景填充结束位置
+
+move_pen_position(x=70, y=160)  # 移动画笔位置
+turtle.left(185)  # 向左旋转180度
+turtle.circle(-110,185)  # 右侧圆弧
+# 画心形直线（ 右下方 ）
+#turtle.left(20)  # 向左旋转180度
+turtle.forward(50)
+move_pen_position(x=-180, y=-180)  # 移动画笔位置
+turtle.left(180)  # 向左旋转140度
+
+# 画心形直线（ 左下方 ）
+turtle.forward(600)  # 向前移动画笔，长度为224
+
+# 在心形中写上表白话语
+move_pen_position(0,50)  # 表白语位置
+turtle.hideturtle()  # 隐藏画笔
+turtle.color('#CD5C5C', 'pink')  # 字体颜色
+# font:设定字体、尺寸（电脑下存在的字体都可设置）  align:中心对齐
+turtle.write(love, font=('Arial', 20, 'bold'), align="center")
+
+# 签写署名和日期
+if (signature != '') & (date != ''):
+    turtle.color('pink', 'pink')
+    time.sleep(2)
+    move_pen_position(220, -180)
+    turtle.hideturtle()  # 隐藏画笔
+    turtle.write(signature, font=('Arial', 20), align="center")
+    move_pen_position(220, -220)
+    turtle.hideturtle()  # 隐藏画笔
+    turtle.write(date, font=('Arial', 20), align="center")
+
+#1-5点击窗口关闭程序
+window = turtle.Screen()
+window.exitonclick()
