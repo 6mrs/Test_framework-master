@@ -19,15 +19,16 @@ class TestInterface(unittest.TestCase):
 
 
 
-    # def test_1_login(self):  # 登录获取token
-    #     data = {"phone": "13140190582", "shortMsgCode": "102938", "type": "1"}  # 定义传参数据
-    #     head = {"Content-Type": "application/Json"}  # 定义头部
-    #     r = requests.post(self.base_url, params=data, headers=head)  # 传入参数
-    #     result = json.loads(r.text)  # 使用json格式返回
-    #     self.assertIn('retmsg', r.text)  # 检验返回值
-    #     logger.debug(r.text)
-    #     self.t['token'] = r.json()['data']['appToken']
-    #     return r.json()['data']['appToken']
+    def test_1_login(self):  # 登录获取token
+        data = {"phone": "13140190582", "shortMsgCode": "102938", "type": "1"}  # 定义传参数据
+        head = {"Content-Type": "application/Json"}  # 定义头部
+        r = requests.post(self.base_url, params=data, headers=head)  # 传入参数
+        result = json.loads(r.text)  # 使用json格式返回
+        self.assertIn('retmsg', r.text)  # 检验返回值
+        print(result)
+        logger.debug(r.text)
+        # self.t['token'] = r.json()['data']['appToken']
+        # return r.json()['data']['appToken']
 
     def test_2_findUserAddress(self):  # 查看收货地址
         head = {"Content-Type": "application/Json", 'appToken': get_token()}

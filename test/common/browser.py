@@ -3,7 +3,7 @@ import os
 from selenium import webdriver
 from utils.config import DRIVER_PATH, REPORT_PATH
 
-# 可根据需要自行扩展
+
 CHROMEDRIVER_PATH = DRIVER_PATH + '/chromedriver'
 IEDRIVER_PATH = DRIVER_PATH + '\IEDriverServer.exe'
 PHANTOMJSDRIVER_PATH = DRIVER_PATH + '\phantomjs.exe'
