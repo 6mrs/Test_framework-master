@@ -2,3 +2,7 @@
 /venv/
 .DS_Store
 .idea
+log
+docs
+drivers/
+utils
