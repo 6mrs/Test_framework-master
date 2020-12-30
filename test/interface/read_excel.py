@@ -38,7 +38,7 @@ class Operate_Excel(object):
             print(self.file_path)
 
         if sheet_id:
-            self.sheet_id = 1     # 打开表格第二个页面
+            self.sheet_id = sheet_id
         else:
             self.sheet_id = 0
         # 调用成员方法

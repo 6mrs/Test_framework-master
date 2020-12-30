@@ -9,15 +9,19 @@ from utils.log import logger
 
 class TestFans(unittest.TestCase):
     def setUp(self):
-        self.url1 = 'http://test.dr.loc/api/app-user/app/userFans/add'
-        self.url2 = 'http://test.dr.loc/api/app-user/app/userFans/byList'
-        self.url3 = 'http://test.dr.loc/api/app-user/app/userFans/byPage'
-        self.url4 = 'http://test.dr.loc/api/app-user/app/userFans/page'
-        self.url5 = 'http://test.dr.loc/api/app-user/app/userFans/list'
+        self.url1 = 'http://dev.dr.loc/api/app-user/app/userPrivMsg/add'
+        self.url2 = 'http://test.dr.loc/api/app-user/app/userPrivMsg/get'
+        self.url3 = 'http://test.dr.loc/api/app-user/app/userPrivMsg/page'
+        self.url4 = 'http://test.dr.loc/api/app-user/app/userPrivMsg/remove'
+        self.url5 = 'http://test.dr.loc/api/app-user/app/userPrivMsg/count'
 
-    def test_addFans(self):  # app关注某人
+    def test_addMsg(self):  # app发私信
         data = {
-            "ids": [2762388741266966529, 2764908511397828609, 2764913283957948417, 2764918228409035777, 2771436108578551809]
+            "msg": {
+                "data": "hello哈哈哈哈哈哈哈、",
+                "type": "1"
+            },
+            "recUserId": 2768483002515404801  # id：2762327263629356033
         }
         header = {"Content-Type": "application/Json", "app-token": get_token()}
         r = requests.post(self.url1, json=data, headers=header)
@@ -29,9 +33,24 @@ class TestFans(unittest.TestCase):
         self.assertEqual(result['code'], 0)
         logger.debug(r.text)
 
-    def test_byList(self):  # app非分页查询被关注列表
+    def test_getMsg(self):  # app查看和默认的私信内容列表
+        data = {
+            "current": 0,
+            "entity": {
+                "recUserId": [
+                    2768788935397508097
+                ]
+            },
+            "orders": [
+                {
+                    "asc": "true",
+                    "column": ""
+                }
+            ],
+            "size": 0
+        }
         header = {"Content-Type": "application/Json", "app-token": get_token()}
-        r = requests.post(self.url2, headers=header)
+        r = requests.post(self.url2, json=data, headers=header)
         result = json.loads(r.text)
         print("headers信息...:", header)
         print("请求地址.......:", self.url2)
@@ -40,14 +59,14 @@ class TestFans(unittest.TestCase):
         self.assertEqual(result['code'], 0)
         logger.debug(r.text)
 
-    def test_byPage(self):  # app分页查询被关注列表
+    def test_getPage(self):  # app分页查询私信列表
         data = {
             "current": 0,
             "entity": {},
             "orders": [
                 {
                     "asc": "true",
-                    "column": "0"
+                    "column": ""
                 }
             ],
             "size": 0
@@ -62,17 +81,10 @@ class TestFans(unittest.TestCase):
         self.assertEqual(result['code'], 0)
         logger.debug(r.text)
 
-    def test_Page(self):  # app分页查询关注列表
+    def test_remove(self):  # app删除私信
         data = {
-            "current": 0,
-            "entity": {},
-            "orders": [
-                {
-                    "asc": 'true',
-                    "column": ""
-                }
-            ],
-            "size": 0
+            "id": [2769957469547724801]
+            # "recUserId": [2762327263629356033]
         }
         header = {"Content-Type": "application/Json", "app-token": get_token()}
         r = requests.post(self.url4, json=data, headers=header)
@@ -81,9 +93,10 @@ class TestFans(unittest.TestCase):
         print("请求地址.......:", self.url4)
         print("返回数据为......:", result)
         self.assertIn('msg', r.text)  # 断言
+        self.assertEqual(result['code'], 0)
         logger.debug(r.text)
 
-    def test_List(self):  # app非分页查询关注列表
+    def test_count(self):  # app查看未读消息数量
 
         header = {"Content-Type": "application/Json", "app-token": get_token()}
         r = requests.post(self.url5,  headers=header)

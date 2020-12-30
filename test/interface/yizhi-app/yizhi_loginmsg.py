@@ -9,10 +9,10 @@ from utils.log import logger
 class TestInterface(unittest.TestCase):
     def setUp(self):  # 初始化
         self.t = globals()
-        self.base_url = 'http://test.dr.loc/api/app-user/app/userInfo/login'
-        self.base2_url = 'http://test.dr.loc/api/app-user/app/userInfo/get'
-        self.base4_url = 'http://test.dr.loc/api/app-user/app/userInfo/sms'
-        self.base5_url = 'http://test.dr.loc/api/app-user/app/userInfo/update'
+        self.base_url = 'http://dev.dr.loc/api/app-user/app/userInfo/login'
+        self.base2_url = 'http://dev.dr.loc/api/app-user/app/userInfo/get'
+        self.base4_url = 'http://dev.dr.loc/api/app-user/app/userInfo/sms'
+        self.base5_url = 'http://dev.dr.loc/api/app-user/app/userInfo/update'
 
     # def test_1_login(self):  # 登录获取token
     #     data = {"phone": "13140190582", "sms": "102938"}  # 定义传参数据
@@ -59,11 +59,11 @@ class TestInterface(unittest.TestCase):
             "avator": "",
             "deptId": "",
             "linkAddr": "",
-            "name": "也请",
-            "phone": "17339652510",
+            "name": "",
+            "phone": "",
             "pwd": "123456",
-            "sex": 2,
-            "sign": ""
+            "sex": 1,
+            "sign": "小魔仙"
         }  # 定义传参数据
 
         head = {"Content-Type": "application/Json", "app-token": get_token()}
