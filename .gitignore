@@ -1,8 +1,8 @@
 # Project exclude paths
 /venv/
 .DS_Store
-.idea
-log
-docs
+.idea/
+log/
+docs/
 drivers/
-utils
+utils/

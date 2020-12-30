@@ -10,7 +10,7 @@ from ruamel import yaml
 def test_loginToGetToken():
     url = "http://dev.dr.loc/api/app-user/app/userInfo/login"
     # 登录的参数数据
-    data = {"phone": "13140190582", "sms": "102938"}  # 定义传参数据18224560720
+    data = {"phone": "18224560720", "sms": "102938"}  # 定义传参数据18224560720
     head = {"Content-Type": "application/Json"}  # 定义头部im
     # 初始化url请求对象
     response = requests.post(url=url, json=data, headers=head)
