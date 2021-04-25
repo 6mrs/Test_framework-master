@@ -194,8 +194,8 @@ function showOutput(id, name) {
 
 <div class='page-header'>
 <h1>自动化测试报告</h1>
-<p class='attribute'><strong>开始时间:</strong> 2020-12-01 14:00:05</p>
-<p class='attribute'><strong>运行时长:</strong> 0:00:00.468168</p>
+<p class='attribute'><strong>开始时间:</strong> 2021-01-15 17:57:28</p>
+<p class='attribute'><strong>运行时长:</strong> 0:00:27.916716</p>
 <p class='attribute'><strong>状态:</strong> 通过 1</p>
 
 </div>
@@ -252,6 +252,7 @@ function showOutput(id, name) {
         <pre>
         
 pt1.1: /Users/youjia/Desktop/Test_framework-master/data/api_data.xlsx
+/Users/youjia/Desktop/Test_framework-master/data/api_data.xlsx
 测试名称：  正确登录
 是否运行key：  True
 接口url：  http://test.dr.loc/api/app-user/app/userInfo/login
@@ -262,9 +263,10 @@ pt1.1: /Users/youjia/Desktop/Test_framework-master/data/api_data.xlsx
 }
 运行返回数据为： {
     "code":0,
-    "data":"token:user:1962c26ab52644cd8dc8e08e9b10ef2b",
+    "data":"token:user:f1e6867860844fe49cad0ac52112ff55",
     "msg":"执行成功"
 }
+None
 测试名称：  验证码错
 是否运行key：  True
 接口url：  http://test.dr.loc/api/app-user/app/userInfo/login
@@ -277,6 +279,7 @@ pt1.1: /Users/youjia/Desktop/Test_framework-master/data/api_data.xlsx
     "code":-1,
     "msg":"验证码错误"
 }
+None
 测试名称：  验证码为空
 是否运行key：  True
 接口url：  http://test.dr.loc/api/app-user/app/userInfo/login
@@ -289,6 +292,7 @@ pt1.1: /Users/youjia/Desktop/Test_framework-master/data/api_data.xlsx
     "code":-1,
     "msg":"验证码不能为空"
 }
+None
 测试名称：  手机号长度小于11字符
 是否运行key：  True
 接口url：  http://test.dr.loc/api/app-user/app/userInfo/login
@@ -298,10 +302,10 @@ pt1.1: /Users/youjia/Desktop/Test_framework-master/data/api_data.xlsx
   "sms": "102938"
 }
 运行返回数据为： {
-    "code":0,
-    "data":"token:user:ad30703a36ea491aa0e2a961083255e2",
-    "msg":"执行成功"
+    "code":-1,
+    "msg":"输入的手机号不规范"
 }
+None
 测试名称：  手机号长度大于11字符
 是否运行key：  True
 接口url：  http://test.dr.loc/api/app-user/app/userInfo/login
@@ -312,8 +316,9 @@ pt1.1: /Users/youjia/Desktop/Test_framework-master/data/api_data.xlsx
 }
 运行返回数据为： {
     "code":-1,
-    "msg":"phonelength must be between 0 and 11"
+    "msg":"输入的手机号不规范"
 }
+None
 测试名称：  手机号不以13\14\15\17\18开头的11位纯数字
 是否运行key：  True
 接口url：  http://test.dr.loc/api/app-user/app/userInfo/login
@@ -323,46 +328,10 @@ pt1.1: /Users/youjia/Desktop/Test_framework-master/data/api_data.xlsx
   "sms": "102938"
 }
 运行返回数据为： {
-    "code":0,
-    "data":"token:user:e5abed8614554e8596240ab42987ac66",
-    "msg":"执行成功"
+    "code":-1,
+    "msg":"输入的手机号不规范"
 }
-测试名称：  添加收货地址
-是否运行key：  True
-接口url：  http://test.dr.loc/api/app-user/app/userAddr/add
-接口请求方法：  post
-接口请求数据：  {
-  "areaAddr": "北京朝阳区",
-  "areaVO": {
-    "city": 0,
-    "county": 0,
-    "province": 0,
-    "town": 0
-  },
-  "detailAddr": "string",
-  "isDefault": 0,
-  "remark": "string",
-  "signName": "string",
-  "signPhone": "string"
-}
-运行返回数据为： {
-    "code":0,
-    "data":{
-        "areaAddr":"北京朝阳区",
-        "areaVO":{
-            "city":0,
-            "county":0,
-            "province":0,
-            "town":0
-        },
-        "detailAddr":"string",
-        "isDefault":0,
-        "remark":"string",
-        "signName":"string",
-        "signPhone":"string"
-    },
-    "msg":"执行成功"
-}
+None
 
 
         </pre>

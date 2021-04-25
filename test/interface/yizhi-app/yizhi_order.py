@@ -9,9 +9,9 @@ from utils.log import logger
 class TestInterface(unittest.TestCase):
     def setUp(self):  # 初始化
         self.t = globals()
-        self.base_url = 'http://dev.dr.loc/api/app-order/order/userOrder/addFromGoodDetail'
-        self.base2_url = 'http://dev.dr.loc/api/app-order/order/userOrder/page'
-        self.base3_url = 'http://dev.dr.loc/api/app-order/order/userOrder/addFromShoppingCart'
+        self.base_url = 'http://release.dr.loc/api/app-order/order/userOrder/addFromGoodDetail'
+        self.base2_url = 'http://release.dr.loc/api/app-order/order/userOrder/page'
+        self.base3_url = 'http://release.dr.loc/api/app-order/order/userOrder/addFromShoppingCart'
         self.base4_url = 'http://dev.dr.loc/api/app-order/order/userOrder/get'
         self.base5_url = 'http://dev.dr.loc/api/app-order/order/userOrder/pageShopOrder'
         self.base6_url = 'http://dev.dr.loc/api/app-order/order/userOrder/cancelOrder'
@@ -19,10 +19,10 @@ class TestInterface(unittest.TestCase):
 
     def test_add(self):  # 商品详情页提交订单，创建订单
         data = {
-            "goodsId": "2771044513651398657",
+            "goodsId": "2785108415015829505",
             "goodsNum": 2,
-            "specsId": "2771044513680759809",
-            "userAddrId": 2768911321849884673,
+            "specsId": "2785108424893416449",
+            "userAddrId": 2781568947706145793,
             "userPhone": "13140190582"
         }
         head = {"Content-Type": "application/Json", "app-token": get_token()}
@@ -62,9 +62,9 @@ class TestInterface(unittest.TestCase):
     def test_order(self):  # app购物车选择商品后，提交订单
         data = {
             "cartIds": [
-                2771781328780902401
+                2784861228128357377
             ],
-            "userAddrId": 2768911321849884673,
+            "userAddrId": 2781568947706145793,
             "userPhone": "13140190582"
         }
         head = {"Content-Type": "application/Json", "app-token": get_token()}

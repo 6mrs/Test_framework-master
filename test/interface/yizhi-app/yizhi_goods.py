@@ -9,30 +9,29 @@ from utils.log import logger
 class TestInterface(unittest.TestCase):
     def setUp(self):  # 初始化
         self.t = globals()
-        self.base_url = 'http://dev.dr.loc/api/app-goods/goods/goodsInfo/add'
-        self.base2_url = 'http://dev.dr.loc/api/app-goods/goods/goodsInfo/get'
-        self.base3_url = 'http://dev.dr.loc/api/app-goods/goods/goodsInfo/page'
+        self.base_url = 'http://release.dr.loc/api/app-goods/goods/goodsInfo/add'
+        self.base2_url = 'http://release.dr.loc/api/app-goods/goods/goodsInfo/get'
+        self.base3_url = 'http://release.dr.loc/api/app-goods/goods/goodsInfo/page'
         # self.base4_url = 'http://test.dr.loc/api/app-goods/goods/goodsInfo/updateVerify'
-        # self.base5_url = 'http://dev.dr.loc/api/app-goods/goods/appGoodsCategory/page'
+        # self.base5_url = 'http://release.dr.loc/api/app-goods/goods/appGoodsCategory/page'
 
     def test_add(self):  # 新增商品信息
         data = {
-            "ableAftersale": 1,
-            "categoryId": 1334682399234039809,
-            "deliveryType": 0,
-            "details": "就是我，我添加的商品",
+            "categoryId": "1346325552638717953",
+            "categoryName": "潮流花盆(花盆02)",
+            "deliveryType": 1,
+            "details": "哈哈",
             "freight": 0,
-            "goodsName": "测审核",
-            "goodsSpecsAdminAddVOList": [
-                {
-                    "excPoints": 0,
-                    "goodsStock": 99,
-                    "goodsWeight": 0,
-                    "icon": "https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/upload/2020/12/10a2c59d94e9f2e5589b65d7c1219100.png",
-                    "marketPrice": 12,
-                    "sellingPrice": 10,
-                    "specsName": "原味"
-                },
+            "goodsName": "商品烧烤",
+            "goodsSpecsAdminAddVOList": [{
+                "excPoints": 0,
+                "goodsStock": 99,
+                "goodsWeight": 0,
+                "icon": "https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/upload/2020/12/10a2c59d94e9f2e5589b65d7c1219100.png",
+                "marketPrice": 12,
+                "sellingPrice": 10,
+                "specsName": "原味"
+            },
                 {
                     "excPoints": 0,
                     "goodsStock": 99,
@@ -50,12 +49,12 @@ class TestInterface(unittest.TestCase):
                     "marketPrice": 12,
                     "sellingPrice": 10,
                     "specsName": "开发味"
-                }
-            ],
+                }],
             "goodsType": "FIX",
-            "imgs": "https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/upload/2020/12/513410b03ad8ac7eca7ef43dac0a6f69.png",
-            "sort": 0
+            "imgs": "https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/upload/2020/12/10a2c59d94e9f2e5589b65d7c1219100.png",
+            "sort": 0,
         }
+
         head = {"Content-Type": "application/Json", "app-token": get_token()}
         r = requests.post(self.base_url, json=data, headers=head)
         result = json.loads(r.text)

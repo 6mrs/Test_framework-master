@@ -9,7 +9,7 @@ from utils.log import logger
 class TestInterface(unittest.TestCase):
     def setUp(self):  # 初始化
         self.t = globals()
-        self.base_url = 'http://dev.dr.loc/api/app-goods/goods/auction/add'
+        self.base_url = 'http://release.dr.loc/api/app-goods/goods/auction/add'
         self.base2_url = 'http://dev.dr.loc/api/app-goods/goods/auction/pageAuction'
         self.base3_url = 'http://dev.dr.loc/api/app-goods/goods/auction/price'
         # self.base4_url = 'http://test.dr.loc/api/app-goods/goods/goodsInfo/updateVerify'
@@ -17,18 +17,22 @@ class TestInterface(unittest.TestCase):
 
     def test_add(self):  # 新增拍品信息  状态 1:上架 0:下架 2:删除 3:系统下架 4:售罄
         data = {
-            "ableAftersale": 0,
-            "categoryId": 1338331876033527810,
-            "deliveryType": 0,
-            "details": "string",
-            "endDate": "2020-12-18T18:46:01.452Z",
+            "categoryId": "1346325648180768770",
+            "categoryName": " 植物分类(番杏)",
+            "deliveryType": 2,
+            "details": "哈哈哈就开始哭就说你是那你上哪嘴巴在哪芭娜娜那那那那那那那那那那那那扭扭捏捏那你呢那你呢你那那你呢\n\n\n\n经久不衰并不代表睡觉觉手机手机手机\n\n嫁鸡随鸡思考思考",
             "freight": 0,
-            "goodsName": "拍品5",
-            "imgs": "https://youjiayuexiang-test.oss-cn-beijing.aliyuncs.com/ossclient/upload/2020/07/4cc7ea98d218c16530a1159509f4fa9a.jpg",
-            "increasePrice": 20,
+            "goodsName": "我发布的测试拍品，就是我自己赢得拍品。DoYouKnow，测试暗价比较，名家比较爱哦的",
+            "goodsSpecsAdminAddVOList": [],
+            "goodsType": "FIX",
+            "imgs": "https://test-dr.oss-cn-shanghai.aliyuncs.com/goods/2781482836501241857/16112830210110.png",
             "sort": 0,
-            "startDate": "2020-12-17T15:13:01.000Z",
-            "startPrice": 100
+            "increasePrice": 1000,
+            "startDate": "2021-01-22 10:58:00",
+            "endDate": "2021-01-22 12:36:00",
+            "startPrice": 100,
+            "linePrice": 0,
+            "uuid": "adajdksjfk"
         }
         head = {"Content-Type": "application/Json", "app-token": get_token()}
         r = requests.post(self.base_url, json=data, headers=head)

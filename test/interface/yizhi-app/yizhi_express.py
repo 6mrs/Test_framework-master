@@ -9,15 +9,15 @@ from utils.log import logger
 class TestInterface(unittest.TestCase):
     def setUp(self):  # 初始化
         self.t = globals()
-        self.base_url = 'http://test.dr.loc/api/app-order/order/userOrder/sendOutGoods'
+        self.base_url = 'http://dev.dr.loc/api/app-order/order/userOrder/sendOutGoods'
         self.base2_url = 'http://dev.dr.loc/api/app-goods/goods/auction/pageAuction'
         self.base3_url = 'http://dev.dr.loc/api/app-goods/goods/auction/price'
 
     def test_add(self):  # APP商家去发货
         data = {
             "comCode": 11111,
-            "expressNum": "12321312321",
-            "orderId": 2779001780188436481
+            "expressNum": "1232131232132342342",
+            "orderId": 2781219251791490049
         }
         head = {"Content-Type": "application/Json", "app-token": get_token()}
         r = requests.post(self.base_url, json=data, headers=head)

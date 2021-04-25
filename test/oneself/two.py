@@ -37,7 +37,7 @@ if __name__ == '__main__':
     im = im.resize((WIDTH, HEIGHT), Image.NEAREST)
 
     # 初始化输出的字符串
-    txt = ""
+    txt = "111"
 
     # 遍历图片中的每一行
     for i in range(HEIGHT):

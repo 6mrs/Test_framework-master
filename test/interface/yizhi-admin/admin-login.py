@@ -8,7 +8,7 @@ from ruamel import yaml
 
 
 def test_loginToGetToken():
-    url = "http://dev.dr.loc/api/admin-auth/admin/login"
+    url = "http://.dr.loc/api/admin-auth/admin/login"
     # 登录的参数数据
     data = {
         "password": "123456",

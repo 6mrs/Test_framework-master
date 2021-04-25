@@ -8,17 +8,18 @@ from ruamel import yaml
 
 
 def test_loginToGetToken():
-    url = "http://dev.dr.loc/api/app-user/app/userInfo/login"
+    url = "http://release.dr.loc/api/app-user/app/userInfo/login"
     # 登录的参数数据
     data = {"phone": "18224560720", "sms": "102938"}  # 定义传参数据18224560720
     head = {"Content-Type": "application/Json"}  # 定义头部im
     # 初始化url请求对象
     response = requests.post(url=url, json=data, headers=head)
+
     result = json.loads(response.text)  # 使用json格式返回
 
     # print(response.text)
-    print(response.status_code)
-    print(response.json()["data"])
+    # print(response.status_code)
+    # print(response.json()["data"])
     # return response.json()["token"]
 
     # 把token值写入配置文件中

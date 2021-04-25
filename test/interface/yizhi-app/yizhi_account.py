@@ -9,19 +9,19 @@ from utils.log import logger
 class TestInterface(unittest.TestCase):
     def setUp(self):  # 初始化
         self.t = globals()
-        self.base_url = 'http://dev.dr.loc/api/user-account/account/userAccount/updateUserMoneyAccount'
-        self.base2_url = 'http://dev.dr.loc/api/user-account/account/userAccount/updateSystemAccount'
-        self.base3_url = 'http://dev.dr.loc/api/user-account/earnest/userEarnest/update'
-        self.base4_url = 'http://dev.dr.loc/api/user-account/account/userAccount/pageUserMoneyLog'
+        self.base_url = 'http://release.dr.loc/api/user-account/account/userAccount/updateUserMoneyAccount'
+        self.base2_url = 'http://release.dr.loc/api/user-account/account/userAccount/updateSystemAccount'
+        self.base3_url = 'http://release.dr.loc/api/user-account/earnest/userEarnest/update'
+        self.base4_url = 'http://release.dr.loc/api/user-account/account/userAccount/pageUserMoneyLog'
 
     def test_update(self):  # 更新用户资金信息
         data = {
-            "ioAmt": 10000000,
+            "ioAmt": 1000,
             "ioType": 1,  # 记录类型: 1:充值, 2:消费,3:提取,4:退款,5:冲正,6:收入
             "orderId": 2772163323007071233,
             "remark": "",
             "status": 1,
-            "userId": 2768483002515404801
+            "userId": 5004831
         }
         head = {"Content-Type": "application/Json", "app-token": get_token()}
         r = requests.post(self.base_url, json=data, headers=head)
@@ -54,10 +54,10 @@ class TestInterface(unittest.TestCase):
     def test_earnest_update(self):  # 充值，冲正和扣款更新用户保证金账户信息
 
         data = {
-            "earnestType": "buy",  # 保证类型 sell卖家保证金/buy买家保证金
+            "earnestType": "sell",  # 保证类型 sell卖家保证金/buy买家保证金
             "ioAmt": 50000,
             "ioType": 1,  # 记录类型: 1:充值, 2:扣款，5:冲正
-            "userId": 2772540048977598465
+            "userId": 5004831
         }
         head = {"Content-Type": "application/Json", "app-user": get_token()}
         r = requests.post(self.base3_url, json=data, headers=head)
